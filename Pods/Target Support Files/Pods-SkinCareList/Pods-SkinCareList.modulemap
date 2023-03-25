@@ -1,0 +1,6 @@
+framework module Pods_SkinCareList {
+  umbrella header "Pods-SkinCareList-umbrella.h"
+
+  export *
+  module * { export * }
+}

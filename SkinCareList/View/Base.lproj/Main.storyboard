@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="STF-6B-lx7">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SCAN-->
+        <scene sceneID="oib-Fn-LO8">
+            <objects>
+                <navigationController id="jRX-Go-9R5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="SCAN" image="barcode.viewfinder" catalog="system" id="sJn-aZ-qt4">
+                        <imageReference key="selectedImage" image="barcode.viewfinder" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1zm-MK-D7e">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.3058823645" green="0.4196078479" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.3058823645" green="0.4196078479" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZqI-qQ-qTG" kind="relationship" relationship="rootViewController" id="7kV-cR-cYD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSK-pI-zfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-419" y="-699"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="fRf-z1-c7F">
+            <objects>
+                <tabBarController id="STF-6B-lx7" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="anF-98-3zA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jRX-Go-9R5" kind="relationship" relationship="viewControllers" id="mA2-rU-r2L"/>
+                        <segue destination="dkU-WY-EiG" kind="relationship" relationship="viewControllers" id="1FH-kG-ixN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nPQ-XO-dfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1278" y="-339"/>
+        </scene>
+        <!--LIST-->
+        <scene sceneID="0sB-IF-3i0">
+            <objects>
+                <navigationController id="dkU-WY-EiG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="LIST" image="list.bullet" catalog="system" selectedImage="list.bullet" id="T8p-ak-bcF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wtk-nt-7cM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.5176470876" green="0.27450981740000002" blue="0.37254902719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.5176470876" green="0.27450981740000002" blue="0.37254902719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MhQ-Bg-LeX" kind="relationship" relationship="rootViewController" id="9Hc-Fg-Oe4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="br3-jT-kND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-419" y="92"/>
+        </scene>
+        <!--WELCOME-->
+        <scene sceneID="2hN-Rh-2MX">
+            <objects>
+                <viewController id="ZqI-qQ-qTG" customClass="WelcomeViewController" customModule="SkinCareList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W1e-we-OQL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_HautG 1" translatesAutoresizingMaskIntoConstraints="NO" id="EYZ-dd-vWQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_BasD 1" translatesAutoresizingMaskIntoConstraints="NO" id="pEy-Ql-uyJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PxZ-wc-d8w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EYZ-dd-vWQ" firstAttribute="leading" secondItem="PxZ-wc-d8w" secondAttribute="leading" id="BjR-wK-AwZ"/>
+                            <constraint firstItem="PxZ-wc-d8w" firstAttribute="bottom" secondItem="EYZ-dd-vWQ" secondAttribute="bottom" id="CEW-kU-Int"/>
+                            <constraint firstItem="pEy-Ql-uyJ" firstAttribute="leading" secondItem="PxZ-wc-d8w" secondAttribute="leading" id="GAS-Xi-bN4"/>
+                            <constraint firstItem="pEy-Ql-uyJ" firstAttribute="trailing" secondItem="PxZ-wc-d8w" secondAttribute="trailing" id="NJQ-T2-Mio"/>
+                            <constraint firstItem="EYZ-dd-vWQ" firstAttribute="top" secondItem="PxZ-wc-d8w" secondAttribute="top" id="VJB-v3-WV1"/>
+                            <constraint firstItem="EYZ-dd-vWQ" firstAttribute="trailing" secondItem="PxZ-wc-d8w" secondAttribute="trailing" id="fOm-wx-BHM"/>
+                            <constraint firstItem="pEy-Ql-uyJ" firstAttribute="top" secondItem="PxZ-wc-d8w" secondAttribute="top" id="oa7-hb-5lf"/>
+                            <constraint firstItem="PxZ-wc-d8w" firstAttribute="bottom" secondItem="pEy-Ql-uyJ" secondAttribute="bottom" id="rLx-Tk-rQt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="WELCOME" id="dpW-SF-eqi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hjd-JE-Mh8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519.84732824427476" y="-698.59154929577471"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="C8E-KV-RER">
+            <objects>
+                <viewController storyboardIdentifier="CodeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JqT-nv-pBx" customClass="ScannerViewController" customModule="SkinCareList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ukU-4S-GUz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iHd-Kb-tPb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mh5-8F-zCd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtx-A2-Zur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1448" y="-699"/>
+        </scene>
+        <!--LIST-->
+        <scene sceneID="Myk-vU-2am">
+            <objects>
+                <viewController id="MhQ-Bg-LeX" customClass="ListViewController" customModule="SkinCareList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fzo-pl-WYa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7JJ-rv-2Da">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0yb-5B-cxo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7JJ-rv-2Da" firstAttribute="top" secondItem="0yb-5B-cxo" secondAttribute="top" id="0tq-nA-cTv"/>
+                            <constraint firstItem="7JJ-rv-2Da" firstAttribute="leading" secondItem="0yb-5B-cxo" secondAttribute="leading" id="OMq-bC-MjP"/>
+                            <constraint firstItem="7JJ-rv-2Da" firstAttribute="trailing" secondItem="0yb-5B-cxo" secondAttribute="trailing" id="TIO-ip-PXu"/>
+                            <constraint firstItem="7JJ-rv-2Da" firstAttribute="bottom" secondItem="0yb-5B-cxo" secondAttribute="bottom" id="mFg-Ab-GZc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="LIST" id="jBY-9k-ZYg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lw2-zT-Frd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="515.94202898550725" y="91.071428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Fond_BasD 1" width="1384" height="1089"/>
+        <image name="Fond_HautG 1" width="1384" height="1089"/>
+        <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
