@@ -8,7 +8,7 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    
     lazy var scanButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class WelcomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([buttonHorizontalConstraint, buttonVerticalConstraint, buttonWidthConstraint, buttonHeightConstraint])
     }
-
+    
     @objc func scanButtonTapped() {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -46,14 +46,15 @@ class WelcomeViewController: UIViewController {
         
         self.present(scanVC, animated: true)
     }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

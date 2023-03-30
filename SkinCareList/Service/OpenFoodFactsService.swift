@@ -20,7 +20,7 @@ class OpenFoodFactsService {
     }
     
     //MARK: - Method
-    func getCode(code : String, completion: @escaping (Result<CodeResult, APIError>)-> Void) {
+    func getCode(code : [ProductScann], completion: @escaping (Result<CodeResult, APIError>)-> Void) {
         session.request("https://ssl-api.openbeautyfacts.org/api/v0/product/\(code)")
             .validate(statusCode: 200..<300)
             .responseData { response in

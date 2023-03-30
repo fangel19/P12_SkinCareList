@@ -94,16 +94,29 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         print("toto", code)
         self.navigationController?.popViewController(animated: true)
         
-        OpenFoodFactsService.shared.getCode(code: code, completion: { results in
+        OpenFoodFactsService.shared.getCode(code: [], completion: { results in
             switch results {
             case .success(let code):
-
+                
                 print(code)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         })
     }
+    
+    //    var storyboard: UIStoryboard = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ListVC") as? ListViewController) {
+    //        guard ProductService.shared.productscann.count > 0 else {
+    //            let alert = UIAlertController(title: "Erreur", message: "Ce code barre n'est pas reconnu", preferredStyle: .alert)
+    //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    //            self.present(alert, animated: true, completion: nil)
+    //            return
+    //        }
+    //        storyboard.productscanne = ProductService.shared.productscann
+    //        navigationController?.pushViewController(storyboard, animated: true)
+    //}
+    
+    
     
     override var prefersStatusBarHidden: Bool {
         return true
