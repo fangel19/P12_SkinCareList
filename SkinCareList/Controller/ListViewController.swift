@@ -9,21 +9,42 @@ import UIKit
 
 class ListViewController: UIViewController {
 
+    
+    @IBOutlet weak var tableViewList: UITableView!
+    
+    private var productResult = [Product]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
+        tableViewList.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customTableViewCell")
+        
+        tableViewList.delegate = self
+        tableViewList.dataSource = self
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
+}
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.productResult.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableViewList.dequeueReusableCell(withIdentifier: "customTableViewCell", for: indexPath) as? CustomTableViewCell else {
+            
+            return UITableViewCell()
+        }
+        
+        let product: Product = self.productResult[indexPath.row]
+        cell.configureCell(withImage: product.imageFrontURL, name: product.productNameFr, date: "")
+        
+        return cell
+    }
 }

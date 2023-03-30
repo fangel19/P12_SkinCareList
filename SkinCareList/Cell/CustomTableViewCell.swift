@@ -28,7 +28,8 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     func configureCell(withImage imageFront: String, name: String, date: String) {
-        productImage
+        
+        productImage.downloaded(from: imageFront)
         productDate.text = date
         productName.text = name
     }

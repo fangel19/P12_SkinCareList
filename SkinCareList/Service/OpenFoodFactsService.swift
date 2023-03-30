@@ -24,7 +24,7 @@ class OpenFoodFactsService {
         session.request("https://ssl-api.openbeautyfacts.org/api/v0/product/\(code)")
             .validate(statusCode: 200..<300)
             .responseData { response in
-                print(response.response?.statusCode, response.request?.url)
+                print(response.response?.statusCode as Any, response.request?.url as Any)
                 switch response.result {
                 case .success(let product):
                     print("Validation Successful")

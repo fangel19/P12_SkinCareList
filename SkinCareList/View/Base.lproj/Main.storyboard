@@ -161,6 +161,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LIST" id="jBY-9k-ZYg"/>
+                    <connections>
+                        <outlet property="tableViewList" destination="7JJ-rv-2Da" id="XrG-DG-Stu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lw2-zT-Frd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

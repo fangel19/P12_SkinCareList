@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2403246129D200F300556F7F /* UIImageViewURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2403246029D200F300556F7F /* UIImageViewURL.swift */; };
 		24113D0229BA3C2D009688A0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24113D0129BA3C2D009688A0 /* WelcomeViewController.swift */; };
 		24113D0429BA4D50009688A0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24113D0329BA4D50009688A0 /* ListViewController.swift */; };
 		24113D0829BA5201009688A0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24113D0629BA5201009688A0 /* CustomTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		1180D19F59E08B523B7C1597 /* Pods_SkinCareList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkinCareList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E7D583FCD4A937668D4FF2 /* Pods_SkinCareListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkinCareListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2403246029D200F300556F7F /* UIImageViewURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewURL.swift; sourceTree = "<group>"; };
 		24113D0129BA3C2D009688A0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		24113D0329BA4D50009688A0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		24113D0629BA5201009688A0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2403245F29D200BC00556F7F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2403246029D200F300556F7F /* UIImageViewURL.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		24113D0529BA51AC009688A0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		247CC52729AFADA30097D9AE /* SkinCareList */ = {
 			isa = PBXGroup;
 			children = (
+				2403245F29D200BC00556F7F /* Extension */,
 				24113D0529BA51AC009688A0 /* Cell */,
 				247CC55E29AFD50D0097D9AE /* View */,
 				247CC55D29AFD4B60097D9AE /* Service */,
@@ -484,6 +495,7 @@
 				247CC52929AFADA30097D9AE /* AppDelegate.swift in Sources */,
 				2466539C29C21C6700F15A2B /* OpenFoodFactsService.swift in Sources */,
 				247CC52B29AFADA30097D9AE /* SceneDelegate.swift in Sources */,
+				2403246129D200F300556F7F /* UIImageViewURL.swift in Sources */,
 				24B74B0729BA788F000DE58D /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
