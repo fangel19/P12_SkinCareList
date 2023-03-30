@@ -6,47 +6,60 @@
 //
 
 import UIKit
+import CoreData
 
 class ListViewController: UIViewController {
-
+    
     //MARK: - Outlets
     
     @IBOutlet weak var tableViewList: UITableView!
     
     //MARK: - Properties
     
-    var productscanne: [ProductScann] = ProductService.shared.productscann
     private var productResult = [Product]()
     
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateProduct()
+        //        updateProduct()
         // Do any additional setup after loading the view.
         tableViewList.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customTableViewCell")
         
         tableViewList.delegate = self
         tableViewList.dataSource = self
-    
-    }
-    
-    private func updateProduct() {
-        OpenFoodFactsService.shared.getCode(code: productscanne, completion: { results in
-            switch results {
-            case .success(let products):
-                DispatchQueue.main.async {
-                    if !products.product.isEmpty {
-                        self.tableViewList.reloadData()
-                    } else {
-                    }
-                }
-            case . failure(let failure):
-                print("erreur")
-            }
-        })
+        
+        let request: NSFetchRequest = Products.fetchRequest()
+        
+        let test = try? CoreDataStack.sharedInstance.viewContext.fetch(request)
+        
+        for product in test! {
+            print("=>", product.name)
+        }
+        print(test!.count)
+        
+        
     }
 }
+
+
+
+//    private func updateProduct() {
+//        OpenFoodFactsService.shared.getCode(code: productscanne, completion: { results in
+//            switch results {
+//            case .success(let products):
+//                DispatchQueue.main.async {
+//                    if !products.product.isEmpty {
+//                        self.tableViewList.reloadData()
+//                    } else {
+//                    }
+//                }
+//            case . failure(let failure):
+//                print("erreur")
+//            }
+//        })
+//    }
+
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     

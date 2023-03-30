@@ -37,4 +37,12 @@ final class CoreDataStack {
         })
         return container
     }()
+    
+    func saveContext() {
+        do {
+            try viewContext.save()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }

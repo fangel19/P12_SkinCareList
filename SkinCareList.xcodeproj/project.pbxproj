@@ -30,6 +30,8 @@
 		24D8322629D5FA2E0052DFEC /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322529D5FA2E0052DFEC /* Products.swift */; };
 		24D8322829D5FFD60052DFEC /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322729D5FFD60052DFEC /* ProductService.swift */; };
 		24D8322A29D6008A0052DFEC /* ProductScann.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322929D6008A0052DFEC /* ProductScann.swift */; };
+		24D8322C29D622550052DFEC /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322B29D622550052DFEC /* AlertMessage.swift */; };
+		24D8322E29D627970052DFEC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322D29D627970052DFEC /* CoreDataManager.swift */; };
 		7483147C916A4A5D39036C31 /* Pods_SkinCareList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1180D19F59E08B523B7C1597 /* Pods_SkinCareList.framework */; };
 		9DFA724BC0FDB9CD8CC5817D /* Pods_SkinCareListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E7D583FCD4A937668D4FF2 /* Pods_SkinCareListTests.framework */; };
 		AEA41D1D09C42341240F2466 /* Pods_SkinCareList_SkinCareListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC08963DB7CA63A365A6F150 /* Pods_SkinCareList_SkinCareListUITests.framework */; };
@@ -82,6 +84,8 @@
 		24D8322529D5FA2E0052DFEC /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		24D8322729D5FFD60052DFEC /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		24D8322929D6008A0052DFEC /* ProductScann.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScann.swift; sourceTree = "<group>"; };
+		24D8322B29D622550052DFEC /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		24D8322D29D627970052DFEC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		56704859E2C0E49C8308A3BB /* Pods-SkinCareList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList.debug.xcconfig"; path = "Target Support Files/Pods-SkinCareList/Pods-SkinCareList.debug.xcconfig"; sourceTree = "<group>"; };
 		95FC1107BE01B9D19F49E0F5 /* Pods-SkinCareList-SkinCareListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList-SkinCareListUITests.debug.xcconfig"; path = "Target Support Files/Pods-SkinCareList-SkinCareListUITests/Pods-SkinCareList-SkinCareListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A98604180106DF26CB2917F /* Pods-SkinCareList-SkinCareListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList-SkinCareListUITests.release.xcconfig"; path = "Target Support Files/Pods-SkinCareList-SkinCareListUITests/Pods-SkinCareList-SkinCareListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				2403246029D200F300556F7F /* UIImageViewURL.swift */,
+				24D8322B29D622550052DFEC /* AlertMessage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				247CC52C29AFADA30097D9AE /* ViewController.swift */,
 				247CC53929AFADA50097D9AE /* Info.plist */,
 				24D8322329D5F3A80052DFEC /* CoreDataStack.swift */,
+				24D8322D29D627970052DFEC /* CoreDataManager.swift */,
 				24D8322529D5FA2E0052DFEC /* Products.swift */,
 				247CC53129AFADA30097D9AE /* SkinCareList.xcdatamodeld */,
 			);
@@ -499,9 +505,11 @@
 			files = (
 				247CC52D29AFADA30097D9AE /* ViewController.swift in Sources */,
 				24D8322A29D6008A0052DFEC /* ProductScann.swift in Sources */,
+				24D8322C29D622550052DFEC /* AlertMessage.swift in Sources */,
 				2466539E29C22B4200F15A2B /* CodeResult.swift in Sources */,
 				24113D0229BA3C2D009688A0 /* WelcomeViewController.swift in Sources */,
 				24113D0429BA4D50009688A0 /* ListViewController.swift in Sources */,
+				24D8322E29D627970052DFEC /* CoreDataManager.swift in Sources */,
 				24113D0829BA5201009688A0 /* CustomTableViewCell.swift in Sources */,
 				246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */,
 				24D8322429D5F3A80052DFEC /* CoreDataStack.swift in Sources */,

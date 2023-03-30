@@ -20,7 +20,7 @@ class OpenFoodFactsService {
     }
     
     //MARK: - Method
-    func getCode(code : [ProductScann], completion: @escaping (Result<CodeResult, APIError>)-> Void) {
+    func getCode(code : String, completion: @escaping (Result<CodeResult, APIError>)-> Void) {
         session.request("https://ssl-api.openbeautyfacts.org/api/v0/product/\(code)")
             .validate(statusCode: 200..<300)
             .responseData { response in
@@ -28,23 +28,18 @@ class OpenFoodFactsService {
                 switch response.result {
                 case .success(let product):
                     print("Validation Successful")
-                    //                    let json = try? JSONSerialization.jsonObject(with: product, options: [.allowFragments])
-                    //                    print(json)
+                    
                     switch response.response?.statusCode {
                     case 200:
                         print(product)
-                        guard let codeProduct = try? JSONDecoder().decode(CodeResult.self, from: product) else { return }
-                        completion(.success(codeProduct))
                         
-                        
-                        //                        do {
-                        //                            let codeProduct = try JSONDecoder().decode(CodeResult.self, from: product)
-                        //
-                        //                        } catch let error {
-                        //                            print(error.localizedDescription)
-                        //                        }
-                        //                        completion(.success(codeProduct))
-                        
+                        do {
+                            let codeProduct = try JSONDecoder().decode(CodeResult.self, from: product)
+                            completion(.success(codeProduct))
+                            
+                        } catch {
+                            completion(.failure(.decoding))
+                        }
                         
                     case 404:
                         completion(.failure(.network))

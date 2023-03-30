@@ -10,7 +10,7 @@ import Foundation
 // MARK: - CodeResult
 struct CodeResult: Decodable {
     var code: String
-    var product: [Product]
+    var product: Product
 }
 
 // MARK: - Product

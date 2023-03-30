@@ -8,9 +8,14 @@ import AVFoundation
 import UIKit
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+  
+    //MARK: - Properties
+    
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var code = String()
+    let coreDataManager = CoreDataManager(managedObjectContext: CoreDataStack.sharedInstance.viewContext)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,10 +99,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         print("toto", code)
         self.navigationController?.popViewController(animated: true)
         
-        OpenFoodFactsService.shared.getCode(code: [], completion: { results in
+        OpenFoodFactsService.shared.getCode(code: code, completion: { results in
             switch results {
             case .success(let code):
-                
+                self.coreDataManager.addProduct(product: code.product)
                 print(code)
             case .failure(let error):
                 print(error.localizedDescription)
