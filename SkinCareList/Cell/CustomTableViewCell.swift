@@ -16,6 +16,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDate: UILabel!
+    @IBOutlet weak var productType: UILabel!
     
     //MARK: - Action
     
@@ -27,10 +28,11 @@ class CustomTableViewCell: UITableViewCell {
         print(french.string(from: now))
     }
     
-    func configureCell(withImage imageFront: String, name: String, date: String) {
+    func configureCell(withImage imageFront: String, brand: String, type: String, date: String) {
         
         productImage.downloaded(from: imageFront)
         productDate.text = date
-        productName.text = name
+        productName.text = brand
+        productType.text = type
     }
 }

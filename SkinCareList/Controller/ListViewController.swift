@@ -34,32 +34,13 @@ class ListViewController: UIViewController {
         let test = try? CoreDataStack.sharedInstance.viewContext.fetch(request)
         
         for product in test! {
-            print("=>", product.name)
+            print("=>", product.brand)
         }
         print(test!.count)
         
         
     }
 }
-
-
-
-//    private func updateProduct() {
-//        OpenFoodFactsService.shared.getCode(code: productscanne, completion: { results in
-//            switch results {
-//            case .success(let products):
-//                DispatchQueue.main.async {
-//                    if !products.product.isEmpty {
-//                        self.tableViewList.reloadData()
-//                    } else {
-//                    }
-//                }
-//            case . failure(let failure):
-//                print("erreur")
-//            }
-//        })
-//    }
-
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -77,8 +58,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let product: Product = self.productResult[indexPath.row]
-        cell.configureCell(withImage: product.imageFrontURL, name: product.productNameFr, date: "")
+        cell.configureCell(withImage: product.imageFrontURL, brand: product.brands, type: product.productNameFr, date: "")
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 }

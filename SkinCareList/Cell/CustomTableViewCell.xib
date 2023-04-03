@@ -30,13 +30,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bn4-JL-UJn">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bn4-JL-UJn">
                         <rect key="frame" x="102" y="15" width="290" height="76"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom produit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvZ-YW-yzd">
                                 <rect key="frame" x="0.0" y="0.0" width="290" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SvZ-YW-yzd" secondAttribute="height" multiplier="145:8" id="ae1-gO-enC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3g-Zp-BZD">
+                                <rect key="frame" x="0.0" y="19" width="290" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W3g-Zp-BZD" secondAttribute="height" multiplier="290:19" id="htw-mj-1pI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -54,9 +63,7 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="SvZ-YW-yzd" firstAttribute="top" secondItem="bn4-JL-UJn" secondAttribute="top" id="4EP-Fj-iEg"/>
-                            <constraint firstItem="SvZ-YW-yzd" firstAttribute="leading" secondItem="bn4-JL-UJn" secondAttribute="leading" id="TdL-cJ-qQc"/>
-                            <constraint firstAttribute="trailing" secondItem="SvZ-YW-yzd" secondAttribute="trailing" id="zpw-ic-mC5"/>
+                            <constraint firstItem="tuU-bl-XRp" firstAttribute="width" secondItem="bn4-JL-UJn" secondAttribute="height" multiplier="145:38" id="fF3-PI-eOk"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -78,6 +85,7 @@
                 <outlet property="productDate" destination="YyX-LN-6Nn" id="Nja-sN-ecK"/>
                 <outlet property="productImage" destination="FZg-JF-afs" id="oGe-jM-bX9"/>
                 <outlet property="productName" destination="SvZ-YW-yzd" id="LVO-jg-Ekv"/>
+                <outlet property="productType" destination="W3g-Zp-BZD" id="vIG-sg-HNK"/>
             </connections>
             <point key="canvasLocation" x="130.53435114503816" y="66.197183098591552"/>
         </tableViewCell>

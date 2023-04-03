@@ -20,10 +20,20 @@ class CoreDataManager {
     
     func addProduct(product: Product) {
         let entity = Products(context: managedObjectContext)
-        entity.name = product.brands //FIXME: changer le nom de name
+        entity.brand = product.brands
         entity.image = product.imageFrontURL
+//        entity.date = Date
+        entity.type = product.productNameFr
         
-        //TODO: terminer la correspondance avec le model
         CoreDataStack.sharedInstance.saveContext()
+    }
+    
+    func checkThatItAlreadyExists(oneProduct: String) -> Bool {
+        let request: NSFetchRequest = Products.fetchRequest()
+        request.predicate = NSPredicate(format: "label LIKE %@", oneProduct)
+        let products = try? managedObjectContext.fetch(request)
+        if products!.isEmpty { return false }
+        return true
+        
     }
 }
