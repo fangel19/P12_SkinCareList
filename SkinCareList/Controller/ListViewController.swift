@@ -40,6 +40,22 @@ class ListViewController: UIViewController {
         
         
     }
+    
+    //MARK: - Core
+    
+//    private func completeProductsArray(codeResult: CodeResult) -> [ProductArray] {
+//        var productArray = [ProductArray]()
+//
+//        codeResult.code.forEach() { product in
+//            let product = ProductArray(
+//                brands: product.product.brands,
+//                imageFrontURL: product.product.imageFrontURL,
+//                productNameFr: product.product.productNameFr)
+//
+//            productArray.append(product)
+//        }
+//        return productArray
+//    }
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {

@@ -102,7 +102,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         OpenFoodFactsService.shared.getCode(code: code, completion: { results in
             switch results {
             case .success(let code):
-                self.coreDataManager.addProduct(product: code.product)
+                self.coreDataManager.addProduct(product: code)
                 print(code)
             case .failure(let error):
                 print(error.localizedDescription)

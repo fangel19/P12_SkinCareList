@@ -11,6 +11,7 @@ class CoreDataManager {
     //MARK: - Properties
     
     let managedObjectContext: NSManagedObjectContext
+
     
     //MARK: - Initialization
     
@@ -18,19 +19,21 @@ class CoreDataManager {
         self.managedObjectContext = managedObjectContext
     }
     
-    func addProduct(product: Product) {
+    func addProduct(product: CodeResult) {
         let entity = Products(context: managedObjectContext)
-        entity.brand = product.brands
-        entity.image = product.imageFrontURL
+        entity.brand = product.product.brands
+        entity.image = product.product.imageFrontURL
 //        entity.date = Date
-        entity.type = product.productNameFr
+        entity.type = product.product.productNameFr
+        entity.code = product.code
         
+        checkThatItAlreadyExists(oneProduct: product.code)
         CoreDataStack.sharedInstance.saveContext()
     }
     
     func checkThatItAlreadyExists(oneProduct: String) -> Bool {
         let request: NSFetchRequest = Products.fetchRequest()
-        request.predicate = NSPredicate(format: "label LIKE %@", oneProduct)
+        request.predicate = NSPredicate(format: "code LIKE %@", oneProduct)
         let products = try? managedObjectContext.fetch(request)
         if products!.isEmpty { return false }
         return true
