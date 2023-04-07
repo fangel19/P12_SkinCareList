@@ -20,6 +20,8 @@ class CoreDataManager {
     }
     
     func addProduct(product: CodeResult) {
+        
+        guard checkThatItAlreadyExists(oneProduct: product.code) else {return}
         let entity = Products(context: managedObjectContext)
         entity.brand = product.product.brands
         entity.image = product.product.imageFrontURL
@@ -27,7 +29,9 @@ class CoreDataManager {
         entity.type = product.product.productNameFr
         entity.code = product.code
         
-        checkThatItAlreadyExists(oneProduct: product.code)
+        print("= toto", checkThatItAlreadyExists(oneProduct: product.code)
+)
+                
         CoreDataStack.sharedInstance.saveContext()
     }
     

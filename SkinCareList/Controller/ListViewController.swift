@@ -16,7 +16,7 @@ class ListViewController: UIViewController {
     
     //MARK: - Properties
     
-    private var productResult = [Product]()
+    private var productResult = [Products]()
     
     //MARK: - LifeCycle
     
@@ -29,16 +29,24 @@ class ListViewController: UIViewController {
         tableViewList.delegate = self
         tableViewList.dataSource = self
         
+
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         let request: NSFetchRequest = Products.fetchRequest()
         
         let test = try? CoreDataStack.sharedInstance.viewContext.fetch(request)
         
         for product in test! {
             print("=>", product.brand)
+            productResult.append(product)
+            
         }
         print(test!.count)
-        
-        
+        tableViewList.reloadData()
     }
     
     //MARK: - Core
@@ -74,12 +82,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let product: Product = self.productResult[indexPath.row]
-        cell.configureCell(withImage: product.imageFrontURL, brand: product.brands, type: product.productNameFr, date: "")
+        let product: Products = self.productResult[indexPath.row]
+        cell.configureCell(withImage: product.image ?? "", brand: product.brand ?? "", type: product.type ?? "", date: "")
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 120
     }
 }
