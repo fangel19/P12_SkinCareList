@@ -20,24 +20,40 @@ class CoreDataManager {
     }
     
     func addProduct(product: CodeResult) {
+//        if !checkThatItAlreadyExists(sameProduct: product.code) == false {
+//            let entity = Products(context: managedObjectContext)
+//            entity.brand = product.product.brands
+//            entity.image = product.product.imageFrontURL
+//    //        entity.date = Date
+//            entity.type = product.product.productNameFr
+//            entity.code = product.code
+//
+//            print("= toto", checkThatItAlreadyExists(sameProduct: product.code)
+//    )
+//
+//            CoreDataStack.sharedInstance.saveContext()
+//        } else {
+//            print("existe deja")
+//        }
         
-        guard checkThatItAlreadyExists(oneProduct: product.code) else {return}
+        guard !checkThatItAlreadyExists(sameProduct: product.code) else {return}
+
         let entity = Products(context: managedObjectContext)
         entity.brand = product.product.brands
         entity.image = product.product.imageFrontURL
 //        entity.date = Date
         entity.type = product.product.productNameFr
         entity.code = product.code
-        
-        print("= toto", checkThatItAlreadyExists(oneProduct: product.code)
+
+        print("= toto", checkThatItAlreadyExists(sameProduct: product.code)
 )
-                
+
         CoreDataStack.sharedInstance.saveContext()
     }
     
-    func checkThatItAlreadyExists(oneProduct: String) -> Bool {
+    func checkThatItAlreadyExists(sameProduct: String) -> Bool {
         let request: NSFetchRequest = Products.fetchRequest()
-        request.predicate = NSPredicate(format: "code LIKE %@", oneProduct)
+        request.predicate = NSPredicate(format: "code LIKE %@", sameProduct)
         let products = try? managedObjectContext.fetch(request)
         if products!.isEmpty { return false }
         return true
