@@ -59,4 +59,15 @@ class CoreDataManager {
         return true
         
     }
+    
+    func deleteProduct(row : Int, array : [Products]) {
+        for _ in array {
+            managedObjectContext.delete(array[row])
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print("Error While Deleting : \(error.localizedDescription)")
+            }
+        }
+    }
 }

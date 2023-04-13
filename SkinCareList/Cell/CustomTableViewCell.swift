@@ -6,10 +6,17 @@
 //
 
 import UIKit
+protocol CustomTableViewCellDelegate: AnyObject {
+    
+    func didTapStartButton(in cell: CustomTableViewCell)
+    
+}
 
 class CustomTableViewCell: UITableViewCell {
     
     static let reusableIdentifier = "customTableViewCell"
+    
+    weak var delegate: CustomTableViewCellDelegate?
     
     //MARK: - Outlets
     
@@ -26,6 +33,8 @@ class CustomTableViewCell: UITableViewCell {
         french.dateStyle = .medium
         french.locale = Locale(identifier: "FR-fr")
         print(french.string(from: now))
+        
+        delegate?.didTapStartButton(in: self)
     }
     
     func configureCell(withImage imageFront: String, brand: String, type: String, date: String) {
