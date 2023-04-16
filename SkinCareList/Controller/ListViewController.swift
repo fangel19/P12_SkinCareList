@@ -69,6 +69,18 @@ class ListViewController: UIViewController {
         
         return productArray
     }
+    
+    func getDateFromNow() -> String {
+        
+        let now = Date()
+        let french = DateFormatter()
+        french.dateStyle = .medium
+        french.locale = Locale(identifier: "FR-fr")
+        let date = french.string(from: now)
+        print(french.string(from: now))
+        
+        return date
+    }
 }
 
 //MARK: - TableView
@@ -90,7 +102,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let product: Products = self.productResult[indexPath.row]
-        cell.configureCell(withImage: product.image ?? "", brand: product.brand ?? "", type: product.type ?? "", date: "")
+        cell.configureCell(withImage: product.image ?? "", brand: product.brand ?? "", type: product.type ?? "", date: product.date ?? "")
         
         cell.delegate = self
         return cell
@@ -103,7 +115,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            coreDataManager.deleteProduct(row: indexPath.row, array: productResult)
+            guard let code = self.productResult[indexPath.row].code else { return }
+            coreDataManager.deleteProduct(with: code)
             productResult.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -114,6 +127,9 @@ extension ListViewController: CustomTableViewCellDelegate {
     
     func didTapStartButton(in cell: CustomTableViewCell) {
         guard let indexPath = tableViewList.indexPath(for: cell) else { return }
-        print("buttonTapped in cell at row \(indexPath.row), \(self.productResult[indexPath.row].brand)")
+        print("buttonTapped in cell at row \(indexPath.row), \(self.productResult[indexPath.row].code)")
+        guard let code = self.productResult[indexPath.row].code else { return }
+        coreDataManager.updateDate(with: code, date: getDateFromNow())
+        tableViewList.reloadData()
     }
 }

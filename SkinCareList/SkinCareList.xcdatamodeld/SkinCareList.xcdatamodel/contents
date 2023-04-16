@@ -3,7 +3,7 @@
     <entity name="Products" representedClassName=".Products" syncable="YES" codeGenerationType="category">
         <attribute name="brand" optional="YES" attributeType="String"/>
         <attribute name="code" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>

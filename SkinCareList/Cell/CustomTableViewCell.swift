@@ -28,11 +28,6 @@ class CustomTableViewCell: UITableViewCell {
     //MARK: - Action
     
     @IBAction func start(_ sender: Any) {
-        let now = Date()
-        let french = DateFormatter()
-        french.dateStyle = .medium
-        french.locale = Locale(identifier: "FR-fr")
-        print(french.string(from: now))
         
         delegate?.didTapStartButton(in: self)
     }
