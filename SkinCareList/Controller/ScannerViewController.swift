@@ -96,7 +96,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
-        print("toto", code)
         self.navigationController?.popViewController(animated: true)
         
         OpenFoodFactsService.shared.getCode(code: code, completion: { results in
@@ -106,22 +105,22 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 print(code)
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showAlertButtonTapped()
             }
         })
     }
-    
-    //    var storyboard: UIStoryboard = (UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ListVC") as? ListViewController) {
-    //        guard ProductService.shared.productscann.count > 0 else {
-    //            let alert = UIAlertController(title: "Erreur", message: "Ce code barre n'est pas reconnu", preferredStyle: .alert)
-    //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-    //            self.present(alert, animated: true, completion: nil)
-    //            return
-    //        }
-    //        storyboard.productscanne = ProductService.shared.productscann
-    //        navigationController?.pushViewController(storyboard, animated: true)
-    //}
-    
-    
+
+    func showAlertButtonTapped() {
+
+            // create the alert
+            let alert = UIAlertController(title: "Désolé", message: "Le produit n'a pas été trouvé, scanne un nouveau produit.", preferredStyle: UIAlertController.Style.alert)
+
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
     
     override var prefersStatusBarHidden: Bool {
         return true

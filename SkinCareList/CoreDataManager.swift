@@ -26,13 +26,11 @@ class CoreDataManager {
         let entity = Products(context: managedObjectContext)
         entity.brand = product.product.brands
         entity.image = product.product.imageFrontURL
-        //        entity.date = "Date"
         entity.type = product.product.productNameFr
         entity.code = product.code
         
         print("= toto", checkThatItAlreadyExists(sameProduct: product.code)
         )
-        
         CoreDataStack.sharedInstance.saveContext()
     }
     
@@ -48,7 +46,6 @@ class CoreDataManager {
     func deleteProduct(with code: String) {
         
         let fetchRequest = Products.fetchRequest()
-        
         fetchRequest.predicate = NSPredicate(format: "code == %@", code)
         
         do {
@@ -75,7 +72,6 @@ class CoreDataManager {
     func updateDate(with searchValue: String, date: String) {
         
         let fetchRequest = Products.fetchRequest()
-        
         // Ajoutez un prédicat pour filtrer les résultats selon vos besoins
         fetchRequest.predicate = NSPredicate(format: "code == %@", searchValue)
         

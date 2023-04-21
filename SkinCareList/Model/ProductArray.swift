@@ -11,7 +11,5 @@ struct ProductArray {
     
     let productbrands: String
     let producttype: String
-    let productImage: String
-//    let productDate: Date
-    
+    let productImage: String    
 }

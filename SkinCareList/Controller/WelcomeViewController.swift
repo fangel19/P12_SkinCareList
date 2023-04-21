@@ -22,7 +22,6 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         setupSubview()
         setupLayoutConstraints()
-        // Do any additional setup after loading the view.
     }
     
     private func setupSubview() {
@@ -41,20 +40,8 @@ class WelcomeViewController: UIViewController {
     @objc func scanButtonTapped() {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let scanVC = storyboard.instantiateViewController(withIdentifier: "CodeVC") as! ScannerViewController
         
         self.present(scanVC, animated: true)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

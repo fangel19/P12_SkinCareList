@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import SwiftUI
 
 class ListViewController: UIViewController {
     
@@ -24,7 +25,6 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //        updateProduct()
-        // Do any additional setup after loading the view.
         tableViewList.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customTableViewCell")
         
         tableViewList.delegate = self
@@ -46,7 +46,7 @@ class ListViewController: UIViewController {
         let test = try? CoreDataStack.sharedInstance.viewContext.fetch(request)
         
         for product in test! {
-            print("=>", product.brand)
+            print("=>", product.brand as Any)
             productResult.append(product)
         }
         
@@ -63,7 +63,6 @@ class ListViewController: UIViewController {
             productbrands: product.brands,
             producttype: product.productNameFr,
             productImage: product.imageFrontURL)
-        //            productDate: "")
         
         productArray.append(products)
         
@@ -126,10 +125,33 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 extension ListViewController: CustomTableViewCellDelegate {
     
     func didTapStartButton(in cell: CustomTableViewCell) {
+        
         guard let indexPath = tableViewList.indexPath(for: cell) else { return }
         print("buttonTapped in cell at row \(indexPath.row), \(self.productResult[indexPath.row].code)")
         guard let code = self.productResult[indexPath.row].code else { return }
-        coreDataManager.updateDate(with: code, date: getDateFromNow())
-        tableViewList.reloadData()
+        
+        // Declare Alert message
+        let dialogMessage = UIAlertController(title: "Attention", message: "Tu veux commencer ton produit et enregistrer sa date d'ouverture", preferredStyle: .alert)
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "Oui", style: .default, handler: { [self] (action) -> Void in
+            print("Ok button tapped")
+            coreDataManager.updateDate(with: code, date: getDateFromNow())
+            tableViewList.reloadData()
+        })
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Non", style: .destructive) { [self] (action) -> Void in
+            print("Cancel button tapped")
+            coreDataManager.updateDate(with: code, date: "")
+            tableViewList.reloadData()
+        }
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }
