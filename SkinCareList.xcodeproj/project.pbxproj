@@ -160,14 +160,14 @@
 			path = AlamofireTests;
 			sourceTree = "<group>";
 		};
-		2444324A29F51DAD00413437 /* CoreSataTests */ = {
+		2444324A29F51DAD00413437 /* CoreDataTests */ = {
 			isa = PBXGroup;
 			children = (
 				2444324D29F51FEE00413437 /* TestCoreDataStack.swift */,
 				2444325129F525CB00413437 /* CoreDataService.swift */,
 				2444325329F52C1B00413437 /* CoreDataTests.swift */,
 			);
-			path = CoreSataTests;
+			path = CoreDataTests;
 			sourceTree = "<group>";
 		};
 		247CC51C29AFADA30097D9AE = {
@@ -216,7 +216,7 @@
 		247CC54129AFADA50097D9AE /* SkinCareListTests */ = {
 			isa = PBXGroup;
 			children = (
-				2444324A29F51DAD00413437 /* CoreSataTests */,
+				2444324A29F51DAD00413437 /* CoreDataTests */,
 				2444324929F51CF000413437 /* AlamofireTests */,
 				247CC54229AFADA50097D9AE /* SkinCareListTests.swift */,
 			);

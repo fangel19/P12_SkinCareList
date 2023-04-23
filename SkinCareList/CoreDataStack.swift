@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-final class CoreDataStack {
+class CoreDataStack {
     
     // MARK: - Properties
     
@@ -28,7 +28,7 @@ final class CoreDataStack {
     
     private init() {}
     
-    private lazy var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: persistentContainerName)
         container.loadPersistentStores(completionHandler: {storeDescription, error in
             if let error = error as NSError? {

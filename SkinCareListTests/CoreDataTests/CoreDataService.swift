@@ -19,6 +19,10 @@ class CoreDataService {
         self.managedObjectContext = coreDataStack.viewContext
     }
     
+//    func save(product: Products) {
+//        coreDataStack.saveContext()
+//    }
+    
     func addProduct(product: CodeResult) {
         
         guard !checkThatItAlreadyExists(sameProduct: product.code) else {return}
@@ -31,7 +35,8 @@ class CoreDataService {
         
         print("= toto", checkThatItAlreadyExists(sameProduct: product.code)
         )
-        CoreDataStack.saveContext()
+        
+        coreDataStack.saveContext()
     }
     
     func checkThatItAlreadyExists(sameProduct: String) -> Bool {
