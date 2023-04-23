@@ -14,7 +14,10 @@
 		24113D0829BA5201009688A0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24113D0629BA5201009688A0 /* CustomTableViewCell.swift */; };
 		24113D0929BA5201009688A0 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24113D0729BA5201009688A0 /* CustomTableViewCell.xib */; };
 		2444324429F2AF9A00413437 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2444324329F2AF9A00413437 /* GoogleService-Info.plist */; };
-		244E5CD729ECAB10005AFE1B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 244E5CD629ECAB10005AFE1B /* FirebaseAnalytics */; };
+		2444324C29F51E5000413437 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444324B29F51E5000413437 /* URLProtocol.swift */; };
+		2444324E29F51FEF00413437 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444324D29F51FEE00413437 /* TestCoreDataStack.swift */; };
+		2444325229F525CB00413437 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444325129F525CB00413437 /* CoreDataService.swift */; };
+		2444325429F52C1B00413437 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444325329F52C1B00413437 /* CoreDataTests.swift */; };
 		2466539C29C21C6700F15A2B /* OpenFoodFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539B29C21C6700F15A2B /* OpenFoodFactsService.swift */; };
 		2466539E29C22B4200F15A2B /* CodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539D29C22B4200F15A2B /* CodeResult.swift */; };
 		246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539F29C22CB900F15A2B /* ApiErrorSession.swift */; };
@@ -27,11 +30,12 @@
 		247CC54329AFADA50097D9AE /* SkinCareListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC54229AFADA50097D9AE /* SkinCareListTests.swift */; };
 		247CC54D29AFADA50097D9AE /* SkinCareListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC54C29AFADA50097D9AE /* SkinCareListUITests.swift */; };
 		247CC54F29AFADA50097D9AE /* SkinCareListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC54E29AFADA50097D9AE /* SkinCareListUITestsLaunchTests.swift */; };
+		2488484229F53E4800CC26A6 /* UIApplication+PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488484129F53E4800CC26A6 /* UIApplication+PresentedViewController.swift */; };
+		2488484429F5415500CC26A6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488484329F5415500CC26A6 /* UIViewController+Alert.swift */; };
 		24B74B0729BA788F000DE58D /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B74B0629BA788F000DE58D /* ScannerViewController.swift */; };
 		24D8322429D5F3A80052DFEC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322329D5F3A80052DFEC /* CoreDataStack.swift */; };
 		24D8322629D5FA2E0052DFEC /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322529D5FA2E0052DFEC /* Products.swift */; };
 		24D8322A29D6008A0052DFEC /* ProductScann.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322929D6008A0052DFEC /* ProductScann.swift */; };
-		24D8322C29D622550052DFEC /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322B29D622550052DFEC /* AlertMessage.swift */; };
 		24D8322E29D627970052DFEC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322D29D627970052DFEC /* CoreDataManager.swift */; };
 		7483147C916A4A5D39036C31 /* Pods_SkinCareList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1180D19F59E08B523B7C1597 /* Pods_SkinCareList.framework */; };
 		9DFA724BC0FDB9CD8CC5817D /* Pods_SkinCareListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E7D583FCD4A937668D4FF2 /* Pods_SkinCareListTests.framework */; };
@@ -65,6 +69,10 @@
 		24113D0629BA5201009688A0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		24113D0729BA5201009688A0 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		2444324329F2AF9A00413437 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2444324B29F51E5000413437 /* URLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocol.swift; sourceTree = "<group>"; };
+		2444324D29F51FEE00413437 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		2444325129F525CB00413437 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		2444325329F52C1B00413437 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		2466539B29C21C6700F15A2B /* OpenFoodFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsService.swift; sourceTree = "<group>"; };
 		2466539D29C22B4200F15A2B /* CodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeResult.swift; sourceTree = "<group>"; };
 		2466539F29C22CB900F15A2B /* ApiErrorSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorSession.swift; sourceTree = "<group>"; };
@@ -81,11 +89,12 @@
 		247CC54829AFADA50097D9AE /* SkinCareListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinCareListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		247CC54C29AFADA50097D9AE /* SkinCareListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCareListUITests.swift; sourceTree = "<group>"; };
 		247CC54E29AFADA50097D9AE /* SkinCareListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCareListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2488484129F53E4800CC26A6 /* UIApplication+PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+PresentedViewController.swift"; sourceTree = "<group>"; };
+		2488484329F5415500CC26A6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		24B74B0629BA788F000DE58D /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		24D8322329D5F3A80052DFEC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		24D8322529D5FA2E0052DFEC /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		24D8322929D6008A0052DFEC /* ProductScann.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScann.swift; sourceTree = "<group>"; };
-		24D8322B29D622550052DFEC /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		24D8322D29D627970052DFEC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		56704859E2C0E49C8308A3BB /* Pods-SkinCareList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList.debug.xcconfig"; path = "Target Support Files/Pods-SkinCareList/Pods-SkinCareList.debug.xcconfig"; sourceTree = "<group>"; };
 		95FC1107BE01B9D19F49E0F5 /* Pods-SkinCareList-SkinCareListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList-SkinCareListUITests.debug.xcconfig"; path = "Target Support Files/Pods-SkinCareList-SkinCareListUITests/Pods-SkinCareList-SkinCareListUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				244E5CD729ECAB10005AFE1B /* FirebaseAnalytics in Frameworks */,
 				7483147C916A4A5D39036C31 /* Pods_SkinCareList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				2403246029D200F300556F7F /* UIImageViewURL.swift */,
-				24D8322B29D622550052DFEC /* AlertMessage.swift */,
+				2488484129F53E4800CC26A6 /* UIApplication+PresentedViewController.swift */,
+				2488484329F5415500CC26A6 /* UIViewController+Alert.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,6 +150,24 @@
 				24113D0729BA5201009688A0 /* CustomTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2444324929F51CF000413437 /* AlamofireTests */ = {
+			isa = PBXGroup;
+			children = (
+				2444324B29F51E5000413437 /* URLProtocol.swift */,
+			);
+			path = AlamofireTests;
+			sourceTree = "<group>";
+		};
+		2444324A29F51DAD00413437 /* CoreSataTests */ = {
+			isa = PBXGroup;
+			children = (
+				2444324D29F51FEE00413437 /* TestCoreDataStack.swift */,
+				2444325129F525CB00413437 /* CoreDataService.swift */,
+				2444325329F52C1B00413437 /* CoreDataTests.swift */,
+			);
+			path = CoreSataTests;
 			sourceTree = "<group>";
 		};
 		247CC51C29AFADA30097D9AE = {
@@ -189,6 +216,8 @@
 		247CC54129AFADA50097D9AE /* SkinCareListTests */ = {
 			isa = PBXGroup;
 			children = (
+				2444324A29F51DAD00413437 /* CoreSataTests */,
+				2444324929F51CF000413437 /* AlamofireTests */,
 				247CC54229AFADA50097D9AE /* SkinCareListTests.swift */,
 			);
 			path = SkinCareListTests;
@@ -277,7 +306,7 @@
 				247CC52229AFADA30097D9AE /* Frameworks */,
 				247CC52329AFADA30097D9AE /* Resources */,
 				F89C4CD9DBCF3D9D3DAC8597 /* [CP] Embed Pods Frameworks */,
-				2444324529F2B34B00413437 /* Crashlytics Run Script */,
+				247D384629F5549E00D2B018 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,7 +314,6 @@
 			);
 			name = SkinCareList;
 			packageProductDependencies = (
-				244E5CD629ECAB10005AFE1B /* FirebaseAnalytics */,
 			);
 			productName = SkinCareList;
 			productReference = 247CC52529AFADA30097D9AE /* SkinCareList.app */;
@@ -363,7 +391,6 @@
 			);
 			mainGroup = 247CC51C29AFADA30097D9AE;
 			packageReferences = (
-				244E5CD529ECAB10005AFE1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 247CC52629AFADA30097D9AE /* Products */;
 			projectDirPath = "";
@@ -406,24 +433,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2444324529F2B34B00413437 /* Crashlytics Run Script */ = {
+		247D384629F5549E00D2B018 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
 				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
-			name = "Crashlytics Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		B6E7CF7A364CA3DA25593A42 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -534,13 +562,14 @@
 			files = (
 				240A8FDE29DB491800B9563F /* ProductArray.swift in Sources */,
 				24D8322A29D6008A0052DFEC /* ProductScann.swift in Sources */,
-				24D8322C29D622550052DFEC /* AlertMessage.swift in Sources */,
 				2466539E29C22B4200F15A2B /* CodeResult.swift in Sources */,
 				24113D0229BA3C2D009688A0 /* WelcomeViewController.swift in Sources */,
 				24113D0429BA4D50009688A0 /* ListViewController.swift in Sources */,
 				24D8322E29D627970052DFEC /* CoreDataManager.swift in Sources */,
 				24113D0829BA5201009688A0 /* CustomTableViewCell.swift in Sources */,
 				246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */,
+				2488484229F53E4800CC26A6 /* UIApplication+PresentedViewController.swift in Sources */,
+				2488484429F5415500CC26A6 /* UIViewController+Alert.swift in Sources */,
 				24D8322429D5F3A80052DFEC /* CoreDataStack.swift in Sources */,
 				247CC53329AFADA30097D9AE /* SkinCareList.xcdatamodeld in Sources */,
 				247CC52929AFADA30097D9AE /* AppDelegate.swift in Sources */,
@@ -556,7 +585,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2444325229F525CB00413437 /* CoreDataService.swift in Sources */,
 				247CC54329AFADA50097D9AE /* SkinCareListTests.swift in Sources */,
+				2444324C29F51E5000413437 /* URLProtocol.swift in Sources */,
+				2444324E29F51FEF00413437 /* TestCoreDataStack.swift in Sources */,
+				2444325429F52C1B00413437 /* CoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,7 +759,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 358ZT2285C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinCareList/Info.plist;
@@ -768,7 +801,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 358ZT2285C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinCareList/Info.plist;
@@ -922,25 +955,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		244E5CD529ECAB10005AFE1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		244E5CD629ECAB10005AFE1B /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 244E5CD529ECAB10005AFE1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		247CC53129AFADA30097D9AE /* SkinCareList.xcdatamodeld */ = {

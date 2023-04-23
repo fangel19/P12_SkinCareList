@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import SwiftUI
+import Lottie
 
 class ListViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class ListViewController: UIViewController {
     
     private var productResult = [Products]()
     let coreDataManager = CoreDataManager()
+    private var animationView: Animation!
     
     //MARK: - LifeCycle
     
@@ -53,6 +55,19 @@ class ListViewController: UIViewController {
         print(test!.count)
         tableViewList.reloadData()
     }
+    
+//    func setupAnimationView() {
+//        animationView = .init(name: "nom du fichier json")
+//        animation.frame = view.bounds
+//        view.addSubview(animationView)
+////        animationView.contentMode = .scaleAspectFit
+//        //pour animation en boucle
+//        animationView.loopMode = .loop
+//        //vitesse de l'animation
+////        animationView.animationSpeed = 0.5
+//        //declenche l'animation
+//        animationView.play()
+//    }
     
     //MARK: - Core
     

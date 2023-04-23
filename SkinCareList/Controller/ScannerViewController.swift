@@ -7,15 +7,19 @@
 import AVFoundation
 import UIKit
 
+protocol ScannerViewControllerDelegate: AnyObject {
+    func productScanned(product: CodeResult)
+    func productScannedFailed(error: Error)
+}
+
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-  
+    
     //MARK: - Properties
     
+    weak var delegate: ScannerViewControllerDelegate?
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    var code = String()
-    let coreDataManager = CoreDataManager(managedObjectContext: CoreDataStack.sharedInstance.viewContext)
-    
+    var code = String()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,31 +100,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
-        self.navigationController?.popViewController(animated: true)
-        
         OpenFoodFactsService.shared.getCode(code: code, completion: { results in
             switch results {
-            case .success(let code):
-                self.coreDataManager.addProduct(product: code)
-                print(code)
+            case .success(let product):
+                self.delegate?.productScanned(product: product)
+
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showAlertButtonTapped()
+                self.delegate?.productScannedFailed(error: error)
             }
         })
     }
-
-    func showAlertButtonTapped() {
-
-            // create the alert
-            let alert = UIAlertController(title: "Désolé", message: "Le produit n'a pas été trouvé, scanne un nouveau produit.", preferredStyle: UIAlertController.Style.alert)
-
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
     
     override var prefersStatusBarHidden: Bool {
         return true
