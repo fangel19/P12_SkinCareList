@@ -33,8 +33,6 @@ class CoreDataService {
         entity.type = product.product.productNameFr
         entity.code = product.code
         
-        print("= toto", checkThatItAlreadyExists(sameProduct: product.code)
-        )
         
         coreDataStack.saveContext()
     }

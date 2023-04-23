@@ -12,7 +12,7 @@ class CoreDataStack {
     
     // MARK: - Properties
     
-    private let persistentContainerName = "SkinCareList"
+    let persistentContainerName = "SkinCareList"
     
     // MARK: - Singleton
     
@@ -26,7 +26,7 @@ class CoreDataStack {
     
     // MARK: - Private
     
-    private init() {}
+    init() {}
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: persistentContainerName)

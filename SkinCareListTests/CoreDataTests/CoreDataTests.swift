@@ -22,7 +22,7 @@ final class CoreDataTests: XCTestCase {
     }
     
     
-    let product1 = CodeResult(code: "", product: Product(brands: "Sephora", imageFrontURL: "", productNameFr: "Gloss"))
+    let product1 = CodeResult(code: "1", product: Product(brands: "Sephora", imageFrontURL: "", productNameFr: "Gloss"))
 
     let product2 = CodeResult(code: "", product: Product(brands: "Bioderma", imageFrontURL: "", productNameFr: "Savon"))
     
@@ -33,5 +33,16 @@ final class CoreDataTests: XCTestCase {
         super.tearDown()
         coreDataStack = nil
         coreDataService = nil
+    }
+    
+    func testAddProduct() {
+        
+        coreDataService.addProduct(product: product1)
+        
+        XCTAssertNotNil(product1)
+        XCTAssertEqual(product1.code, "1")
+        XCTAssertEqual(product1.product.brands, "Sephora")
+        XCTAssertEqual(product1.product.imageFrontURL, "")
+        XCTAssertEqual(product1.product.productNameFr, "Sephora")
     }
 }

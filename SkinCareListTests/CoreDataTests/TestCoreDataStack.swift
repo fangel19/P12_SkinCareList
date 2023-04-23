@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 @testable import SkinCareList
 
-final class TestCoreDataStack: CoreDataStack {
+class TestCoreDataStack: CoreDataStack {
     static let modelName = "SkinCaleList"
     static let model: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd")!
@@ -26,11 +26,8 @@ final class TestCoreDataStack: CoreDataStack {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
+        return container
     }()
-    
-    var testContainer: NSPersistentContainer {
-        return TestCoreDataStack().testContainer
-    }
     
     var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
@@ -44,5 +41,10 @@ final class TestCoreDataStack: CoreDataStack {
             print(error.localizedDescription)
         }
     }
+    
+//    var testContainer: NSPersistentContainer {
+//        return TestCoreDataStack().testContainer
+//    }
 }
+
 
