@@ -24,12 +24,14 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDate: UILabel!
     @IBOutlet weak var productType: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     
     //MARK: - Action
     
     @IBAction func start(_ sender: Any) {
         
         delegate?.didTapStartButton(in: self)
+        
     }
     
     func configureCell(withImage imageFront: String, brand: String, type: String, date: String) {

@@ -20,7 +20,7 @@ class ListViewController: UIViewController {
     
     private var productResult = [Products]()
     let coreDataManager = CoreDataManager()
-    private var animationView: Animation!
+    private let animationView = LottieAnimationView(name: "113960-cosmetics")
     
     //MARK: - LifeCycle
     
@@ -31,6 +31,7 @@ class ListViewController: UIViewController {
         
         tableViewList.delegate = self
         tableViewList.dataSource = self
+        self.setUpLottieBackgroundView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,19 +57,20 @@ class ListViewController: UIViewController {
         tableViewList.reloadData()
     }
     
-//    func setupAnimationView() {
-//        animationView = .init(name: "nom du fichier json")
-//        animation.frame = view.bounds
-//        view.addSubview(animationView)
-////        animationView.contentMode = .scaleAspectFit
-//        //pour animation en boucle
-//        animationView.loopMode = .loop
-//        //vitesse de l'animation
-////        animationView.animationSpeed = 0.5
-//        //declenche l'animation
-//        animationView.play()
-//    }
+    func setUpLottieBackgroundView() {
+        animationView.contentMode = .scaleAspectFill
+        animationView.animationSpeed = 1.0 // Ajustez la vitesse d'animation
+        animationView.loopMode = .playOnce // Ajustez le mode de boucle
+        animationView.backgroundBehavior = .pauseAndRestore
+        tableViewList.backgroundView = animationView
+    }
     
+    func animateLottieBackgroundView() {
+        animationView.play { [weak self] _ in
+            self?.animationView.currentProgress = 0
+        }
+    }
+
     //MARK: - Core
     
     private func completeProductsArray(product: Product) -> [ProductArray] {
@@ -119,6 +121,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(withImage: product.image ?? "", brand: product.brand ?? "", type: product.type ?? "", date: product.date ?? "")
         
         cell.delegate = self
+        
         return cell
     }
     
@@ -142,7 +145,6 @@ extension ListViewController: CustomTableViewCellDelegate {
     func didTapStartButton(in cell: CustomTableViewCell) {
         
         guard let indexPath = tableViewList.indexPath(for: cell) else { return }
-        print("buttonTapped in cell at row \(indexPath.row), \(self.productResult[indexPath.row].code)")
         guard let code = self.productResult[indexPath.row].code else { return }
         
         // Declare Alert message
@@ -153,6 +155,7 @@ extension ListViewController: CustomTableViewCellDelegate {
             print("Ok button tapped")
             coreDataManager.updateDate(with: code, date: getDateFromNow())
             tableViewList.reloadData()
+            self.animateLottieBackgroundView()
         })
         
         // Create Cancel button with action handlder

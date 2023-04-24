@@ -88,6 +88,7 @@
                 <outlet property="productImage" destination="FZg-JF-afs" id="oGe-jM-bX9"/>
                 <outlet property="productName" destination="SvZ-YW-yzd" id="LVO-jg-Ekv"/>
                 <outlet property="productType" destination="W3g-Zp-BZD" id="vIG-sg-HNK"/>
+                <outlet property="startButton" destination="tuU-bl-XRp" id="Vgs-zl-rf7"/>
             </connections>
             <point key="canvasLocation" x="130.53435114503816" y="66.197183098591552"/>
         </tableViewCell>

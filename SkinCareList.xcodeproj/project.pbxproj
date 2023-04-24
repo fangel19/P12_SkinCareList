@@ -21,6 +21,8 @@
 		2466539C29C21C6700F15A2B /* OpenFoodFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539B29C21C6700F15A2B /* OpenFoodFactsService.swift */; };
 		2466539E29C22B4200F15A2B /* CodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539D29C22B4200F15A2B /* CodeResult.swift */; };
 		246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539F29C22CB900F15A2B /* ApiErrorSession.swift */; };
+		246925D529F7115C00BC5A49 /* 113960-cosmetics.json in Resources */ = {isa = PBXBuildFile; fileRef = 246925D429F7115C00BC5A49 /* 113960-cosmetics.json */; };
+		246925D729F7116300BC5A49 /* 107932-cosmetics.json in Resources */ = {isa = PBXBuildFile; fileRef = 246925D629F7116300BC5A49 /* 107932-cosmetics.json */; };
 		247CC52929AFADA30097D9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52829AFADA30097D9AE /* AppDelegate.swift */; };
 		247CC52B29AFADA30097D9AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52A29AFADA30097D9AE /* SceneDelegate.swift */; };
 		247CC53029AFADA30097D9AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247CC52E29AFADA30097D9AE /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		2466539B29C21C6700F15A2B /* OpenFoodFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsService.swift; sourceTree = "<group>"; };
 		2466539D29C22B4200F15A2B /* CodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeResult.swift; sourceTree = "<group>"; };
 		2466539F29C22CB900F15A2B /* ApiErrorSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorSession.swift; sourceTree = "<group>"; };
+		246925D429F7115C00BC5A49 /* 113960-cosmetics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "113960-cosmetics.json"; sourceTree = "<group>"; };
+		246925D629F7116300BC5A49 /* 107932-cosmetics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "107932-cosmetics.json"; sourceTree = "<group>"; };
 		247CC52529AFADA30097D9AE /* SkinCareList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinCareList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247CC52829AFADA30097D9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247CC52A29AFADA30097D9AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +174,15 @@
 			path = CoreDataTests;
 			sourceTree = "<group>";
 		};
+		246925D329F7114000BC5A49 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				246925D629F7116300BC5A49 /* 107932-cosmetics.json */,
+				246925D429F7115C00BC5A49 /* 113960-cosmetics.json */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
 		247CC51C29AFADA30097D9AE = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +208,7 @@
 		247CC52729AFADA30097D9AE /* SkinCareList */ = {
 			isa = PBXGroup;
 			children = (
+				246925D329F7114000BC5A49 /* Ressources */,
 				2444324329F2AF9A00413437 /* GoogleService-Info.plist */,
 				2403245F29D200BC00556F7F /* Extension */,
 				24113D0529BA51AC009688A0 /* Cell */,
@@ -410,8 +424,10 @@
 			files = (
 				247CC53829AFADA50097D9AE /* LaunchScreen.storyboard in Resources */,
 				247CC53529AFADA50097D9AE /* Assets.xcassets in Resources */,
+				246925D529F7115C00BC5A49 /* 113960-cosmetics.json in Resources */,
 				2444324429F2AF9A00413437 /* GoogleService-Info.plist in Resources */,
 				24113D0929BA5201009688A0 /* CustomTableViewCell.xib in Resources */,
+				246925D729F7116300BC5A49 /* 107932-cosmetics.json in Resources */,
 				247CC53029AFADA30097D9AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

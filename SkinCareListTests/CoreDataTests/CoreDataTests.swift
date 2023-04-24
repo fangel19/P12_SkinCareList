@@ -35,7 +35,7 @@ final class CoreDataTests: XCTestCase {
         coreDataService = nil
     }
     
-    func testAddProduct() {
+    func test_Add_Product() {
         
         coreDataService.addProduct(product: product1)
         
@@ -44,5 +44,23 @@ final class CoreDataTests: XCTestCase {
         XCTAssertEqual(product1.product.brands, "Sephora")
         XCTAssertEqual(product1.product.imageFrontURL, "")
         XCTAssertEqual(product1.product.productNameFr, "Sephora")
+    }
+    
+    func test_check_if_the_product_already_exists() {
+        coreDataService.addProduct(product: product1)
+        coreDataService.addProduct(product: product2)
+        
+    }
+    
+    func test_delete_Product() {
+        coreDataService.addProduct(product: product1)
+        
+        XCTAssertNotNil(product1)
+        coreDataService.deleteProduct(with: product1.code)
+        XCTAssertNil(product1)
+    }
+    
+    func test_update_date() {
+        coreDataService.updateDate(with: product1.code, date: "")
     }
 }
