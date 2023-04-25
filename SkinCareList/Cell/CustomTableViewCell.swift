@@ -29,13 +29,10 @@ class CustomTableViewCell: UITableViewCell {
     //MARK: - Action
     
     @IBAction func start(_ sender: Any) {
-        
         delegate?.didTapStartButton(in: self)
-        
     }
     
     func configureCell(withImage imageFront: String, brand: String, type: String, date: String) {
-        
         productImage.downloaded(from: imageFront)
         productDate.text = date
         productName.text = brand

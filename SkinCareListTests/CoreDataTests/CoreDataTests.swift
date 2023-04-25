@@ -21,12 +21,10 @@ final class CoreDataTests: XCTestCase {
         coreDataService = CoreDataService(coreDataStack: coreDataStack)
     }
     
-    
     let product1 = CodeResult(code: "1", product: Product(brands: "Sephora", imageFrontURL: "", productNameFr: "Gloss"))
 
     let product2 = CodeResult(code: "", product: Product(brands: "Bioderma", imageFrontURL: "", productNameFr: "Savon"))
     
-                              
     private var productInList = [Products]()
     
     override func tearDown() {
@@ -49,7 +47,6 @@ final class CoreDataTests: XCTestCase {
     func test_check_if_the_product_already_exists() {
         coreDataService.addProduct(product: product1)
         coreDataService.addProduct(product: product2)
-        
     }
     
     func test_delete_Product() {

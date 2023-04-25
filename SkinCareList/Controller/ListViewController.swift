@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreData
-import SwiftUI
 import Lottie
 
 class ListViewController: UIViewController {
@@ -26,7 +25,6 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        updateProduct()
         tableViewList.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customTableViewCell")
         
         tableViewList.delegate = self
@@ -45,7 +43,6 @@ class ListViewController: UIViewController {
     
     func loadingProduct() {
         let request: NSFetchRequest = Products.fetchRequest()
-        
         let test = try? CoreDataStack.sharedInstance.viewContext.fetch(request)
         
         for product in test! {
@@ -139,6 +136,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+//MARK: - StartButton
 
 extension ListViewController: CustomTableViewCellDelegate {
     

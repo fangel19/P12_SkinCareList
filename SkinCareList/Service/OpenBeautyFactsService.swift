@@ -8,11 +8,11 @@
 import Foundation
 import Alamofire
 
-class OpenFoodFactsService {
+class OpenBeautyFactsService {
     
     //MARK: - Singleton
     
-    static let shared = OpenFoodFactsService(session: Alamofire.Session(configuration: .default))
+    static let shared = OpenBeautyFactsService(session: Alamofire.Session(configuration: .default))
     
     private let session: Alamofire.Session
     init(session: Alamofire.Session){

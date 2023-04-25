@@ -49,20 +49,21 @@ class CoreDataService {
     func deleteProduct(with code: String) {
         
         let fetchRequest = Products.fetchRequest()
+        // Add a predicate to filter the results according to your needs
         fetchRequest.predicate = NSPredicate(format: "code == %@", code)
         
         do {
-            // Étape 2: Récupérer l'objet
+            // Step 2: Retrieve the object
             let fetchedObjects = try managedObjectContext.fetch(fetchRequest)
             
-            // Vérifiez si un objet a été trouvé
+            // Check if an object has been found
             if let objectDelete = fetchedObjects.first {
                 
-                // Étape 4: Sauvegarder les modifications
+                // Step 3: Update the object's attributes
                 managedObjectContext.delete(objectDelete)
                 
+                // Step 4: Save changes
                 try managedObjectContext.save()
-                
             } else {
                 print("Aucun objet trouvé avec la valeur de recherche spécifiée.")
             }
@@ -75,20 +76,20 @@ class CoreDataService {
     func updateDate(with searchValue: String, date: String) {
         
         let fetchRequest = Products.fetchRequest()
-        // Ajoutez un prédicat pour filtrer les résultats selon vos besoins
+        // Add a predicate to filter the results according to your needs
         fetchRequest.predicate = NSPredicate(format: "code == %@", searchValue)
         
         do {
-            // Étape 2: Récupérer l'objet
+            // Step 2: Retrieve the object
             let fetchedObjects = try managedObjectContext.fetch(fetchRequest)
             
-            // Vérifiez si un objet a été trouvé
+            // Check if an object has been found
             if let objectToUpdate = fetchedObjects.first {
                 
-                // Étape 3: Mettre à jour les attributs de l'objet
+                // Step 3: Update the object's attributes
                 objectToUpdate.date = date
                 
-                // Étape 4: Sauvegarder les modifications
+                // Step 4: Save changes
                 try managedObjectContext.save()
             } else {
                 print("Aucun objet trouvé avec la valeur de recherche spécifiée.")
@@ -98,5 +99,3 @@ class CoreDataService {
         }
     }
 }
-
-

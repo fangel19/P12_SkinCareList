@@ -99,7 +99,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_HautG 1" translatesAutoresizingMaskIntoConstraints="NO" id="EYZ-dd-vWQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_BasD 1" translatesAutoresizingMaskIntoConstraints="NO" id="pEy-Ql-uyJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_HautD2" translatesAutoresizingMaskIntoConstraints="NO" id="pEy-Ql-uyJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                             </imageView>
                         </subviews>
@@ -171,7 +171,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fond_BasD 1" width="1384" height="1089"/>
+        <image name="Fond_HautD2" width="1384" height="1089"/>
         <image name="Fond_HautG 1" width="1384" height="1089"/>
         <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>

@@ -9,7 +9,7 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     
     let coreDataManager = CoreDataManager(managedObjectContext: CoreDataStack.sharedInstance.viewContext)
     
@@ -22,6 +22,8 @@ class WelcomeViewController: UIViewController {
         return button
     }()
     
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubview()
@@ -31,6 +33,8 @@ class WelcomeViewController: UIViewController {
     private func setupSubview() {
         self.view.addSubview(self.scanButton)
     }
+    
+    //MARK: - Method
     
     private func setupLayoutConstraints() {
         let buttonHorizontalConstraint = scanButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
@@ -42,7 +46,6 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func scanButtonTapped() {
-        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let scanVC = storyboard.instantiateViewController(withIdentifier: "CodeVC") as! ScannerViewController
         scanVC.delegate = self
@@ -58,6 +61,4 @@ extension WelcomeViewController: ScannerViewControllerDelegate {
     func productScannedFailed(error: Error) {
         showAlert(title: "Désolé", message: "Le produit n'a pas été trouvé, scanne un nouveau produit.")
     }
-    
-    
 }
