@@ -28,8 +28,6 @@ class CoreDataManager {
         entity.type = product.product.productNameFr
         entity.code = product.code
         
-        print("= toto", checkThatItAlreadyExists(sameProduct: product.code)
-        )
         CoreDataStack.sharedInstance.saveContext()
     }
     

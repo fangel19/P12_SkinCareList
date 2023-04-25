@@ -80,7 +80,6 @@ class ListViewController: UIViewController, NSFetchedResultsControllerDelegate {
         french.dateStyle = .medium
         french.locale = Locale(identifier: "FR-fr")
         let date = french.string(from: now)
-        print(french.string(from: now))
         
         return date
     }
@@ -151,14 +150,12 @@ extension ListViewController: CustomTableViewCellDelegate {
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "Oui", style: .default, handler: { [self] (action) -> Void in
-            print("Ok button tapped")
             coreDataManager.updateDate(with: product.code ?? "", date: getDateFromNow())
             animateLottieBackgroundView()
         })
         
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Non", style: .destructive) { [self] (action) -> Void in
-            print("Cancel button tapped")
             coreDataManager.updateDate(with: product.code ?? "", date: "")
         }
         
