@@ -23,6 +23,7 @@
 		246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539F29C22CB900F15A2B /* ApiErrorSession.swift */; };
 		246925D529F7115C00BC5A49 /* 113960-cosmetics.json in Resources */ = {isa = PBXBuildFile; fileRef = 246925D429F7115C00BC5A49 /* 113960-cosmetics.json */; };
 		246925D729F7116300BC5A49 /* 107932-cosmetics.json in Resources */ = {isa = PBXBuildFile; fileRef = 246925D629F7116300BC5A49 /* 107932-cosmetics.json */; };
+		246925DC29F8585B00BC5A49 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925DB29F8585B00BC5A49 /* WebViewController.swift */; };
 		247CC52929AFADA30097D9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52829AFADA30097D9AE /* AppDelegate.swift */; };
 		247CC52B29AFADA30097D9AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52A29AFADA30097D9AE /* SceneDelegate.swift */; };
 		247CC53029AFADA30097D9AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247CC52E29AFADA30097D9AE /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 		2466539F29C22CB900F15A2B /* ApiErrorSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorSession.swift; sourceTree = "<group>"; };
 		246925D429F7115C00BC5A49 /* 113960-cosmetics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "113960-cosmetics.json"; sourceTree = "<group>"; };
 		246925D629F7116300BC5A49 /* 107932-cosmetics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "107932-cosmetics.json"; sourceTree = "<group>"; };
+		246925DB29F8585B00BC5A49 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		247CC52529AFADA30097D9AE /* SkinCareList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinCareList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247CC52829AFADA30097D9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247CC52A29AFADA30097D9AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				24113D0129BA3C2D009688A0 /* WelcomeViewController.swift */,
 				24113D0329BA4D50009688A0 /* ListViewController.swift */,
 				24B74B0629BA788F000DE58D /* ScannerViewController.swift */,
+				246925DB29F8585B00BC5A49 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				240A8FDE29DB491800B9563F /* ProductArray.swift in Sources */,
+				246925DC29F8585B00BC5A49 /* WebViewController.swift in Sources */,
 				24D8322A29D6008A0052DFEC /* ProductScann.swift in Sources */,
 				2466539E29C22B4200F15A2B /* CodeResult.swift in Sources */,
 				24113D0229BA3C2D009688A0 /* WelcomeViewController.swift in Sources */,

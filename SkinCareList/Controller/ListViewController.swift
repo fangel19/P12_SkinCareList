@@ -9,78 +9,68 @@ import UIKit
 import CoreData
 import Lottie
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
-    //MARK: - Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var tableViewList: UITableView!
     
-    //MARK: - Properties
+    // MARK: - Properties
     
-    private var productResult = [Products]()
-    let coreDataManager = CoreDataManager()
+    private let coreDataManager = CoreDataManager()
     private let animationView = LottieAnimationView(name: "113960-cosmetics")
+    private var fetchedResultsController: NSFetchedResultsController<Products>!
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        setupFetchedResultsController()
+        setUpLottieBackgroundView()
+    }
+    
+    // MARK: - Setup
+    
+    private func setupTableView() {
         tableViewList.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customTableViewCell")
-        
         tableViewList.delegate = self
         tableViewList.dataSource = self
-        self.setUpLottieBackgroundView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    private func setupFetchedResultsController() {
+        let fetchRequest: NSFetchRequest<Products> = Products.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "brand", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
         
-        productResult.removeAll()
-        loadingProduct()
-    }
-    
-    //MARK: - Method
-    
-    func loadingProduct() {
-        let request: NSFetchRequest = Products.fetchRequest()
-        let test = try? CoreDataStack.sharedInstance.viewContext.fetch(request)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
         
-        for product in test! {
-            print("=>", product.brand as Any)
-            productResult.append(product)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Failed to fetch products: \(error.localizedDescription)")
         }
-        
-        print(test!.count)
-        tableViewList.reloadData()
     }
     
-    func setUpLottieBackgroundView() {
+    private func setUpLottieBackgroundView() {
         animationView.contentMode = .scaleAspectFill
-        animationView.animationSpeed = 1.0 // Ajustez la vitesse d'animation
-        animationView.loopMode = .playOnce // Ajustez le mode de boucle
+        animationView.animationSpeed = 1.0
+        animationView.loopMode = .playOnce
         animationView.backgroundBehavior = .pauseAndRestore
         tableViewList.backgroundView = animationView
     }
     
-    func animateLottieBackgroundView() {
+    private func animateLottieBackgroundView() {
         animationView.play { [weak self] _ in
             self?.animationView.currentProgress = 0
         }
     }
-
-    //MARK: - Core
     
-    private func completeProductsArray(product: Product) -> [ProductArray] {
-        var productArray = [ProductArray]()
-        
-        let products = ProductArray(
-            productbrands: product.brands,
-            producttype: product.productNameFr,
-            productImage: product.imageFrontURL)
-        
-        productArray.append(products)
-        
-        return productArray
+    private func configureCell(_ cell: CustomTableViewCell, at indexPath: IndexPath) {
+        let product = fetchedResultsController.object(at: indexPath)
+        cell.configureCell(withImage: product.image ?? "", brand: product.brand ?? "", type: product.type ?? "", date: product.date ?? "")
+        cell.delegate = self
     }
     
     func getDateFromNow() -> String {
@@ -96,30 +86,42 @@ class ListViewController: UIViewController {
     }
 }
 
-//MARK: - TableView
+// MARK: - UITableViewDataSource
 
-extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return fetchedResultsController.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.productResult.count
+        guard let sectionInfo = fetchedResultsController.sections?[section] else { return 0 }
+        return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableViewList.dequeueReusableCell(withIdentifier: "customTableViewCell", for: indexPath) as? CustomTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customTableViewCell", for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
         
-        let product: Products = self.productResult[indexPath.row]
-        cell.configureCell(withImage: product.image ?? "", brand: product.brand ?? "", type: product.type ?? "", date: product.date ?? "")
-        
-        cell.delegate = self
-        
+        configureCell(cell, at: indexPath)
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension ListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? CustomTableViewCell,
+           let searchTerm = cell.productType.text {
+            let webVC = WebViewController()
+            webVC.searchTerm = searchTerm
+            webVC.modalTransitionStyle = .crossDissolve
+            webVC.modalPresentationStyle = .overFullScreen
+            self.present(webVC, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -129,22 +131,20 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            guard let code = self.productResult[indexPath.row].code else { return }
-            coreDataManager.deleteProduct(with: code)
-            productResult.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            let product = fetchedResultsController.object(at: indexPath)
+            coreDataManager.deleteProduct(with: product.code ?? "")
         }
     }
 }
 
-//MARK: - StartButton
+// MARK: - CustomTableViewCellDelegate
 
 extension ListViewController: CustomTableViewCellDelegate {
     
     func didTapStartButton(in cell: CustomTableViewCell) {
         
         guard let indexPath = tableViewList.indexPath(for: cell) else { return }
-        guard let code = self.productResult[indexPath.row].code else { return }
+        let product = fetchedResultsController.object(at: indexPath)
         
         // Declare Alert message
         let dialogMessage = UIAlertController(title: "Attention", message: "Tu veux commencer ton produit et enregistrer sa date d'ouverture", preferredStyle: .alert)
@@ -152,16 +152,14 @@ extension ListViewController: CustomTableViewCellDelegate {
         // Create OK button with action handler
         let ok = UIAlertAction(title: "Oui", style: .default, handler: { [self] (action) -> Void in
             print("Ok button tapped")
-            coreDataManager.updateDate(with: code, date: getDateFromNow())
-            tableViewList.reloadData()
-            self.animateLottieBackgroundView()
+            coreDataManager.updateDate(with: product.code ?? "", date: getDateFromNow())
+            animateLottieBackgroundView()
         })
         
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Non", style: .destructive) { [self] (action) -> Void in
             print("Cancel button tapped")
-            coreDataManager.updateDate(with: code, date: "")
-            tableViewList.reloadData()
+            coreDataManager.updateDate(with: product.code ?? "", date: "")
         }
         
         //Add OK and Cancel button to dialog message
@@ -170,5 +168,46 @@ extension ListViewController: CustomTableViewCellDelegate {
         
         // Present dialog message to user
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+
+extension ListViewController {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableViewList.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableViewList.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableViewList.deleteRows(at: [indexPath], with: .automatic)
+            }
+        case .update:
+            if let indexPath = indexPath,
+               let cell = tableViewList.cellForRow(at: indexPath) as? CustomTableViewCell {
+                configureCell(cell, at: indexPath)
+            }
+        case .move:
+            if let indexPath = indexPath {
+                tableViewList.deleteRows(at: [indexPath], with: .automatic)
+            }
+            if let newIndexPath = newIndexPath {
+                tableViewList.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        @unknown default:
+            fatalError("Unhandled case in controller(_:didChange:at:for:newIndexPath:)")
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableViewList.endUpdates()
     }
 }

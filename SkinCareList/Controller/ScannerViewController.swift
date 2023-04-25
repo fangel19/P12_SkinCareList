@@ -100,7 +100,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
-        OpenFoodFactsService.shared.getCode(code: code, completion: { results in
+        OpenBeautyFactsService.shared.getCode(code: code, completion: { results in
             switch results {
             case .success(let product):
                 self.delegate?.productScanned(product: product)
