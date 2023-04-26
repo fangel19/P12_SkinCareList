@@ -29,6 +29,10 @@ class TestCoreDataStack: CoreDataStack {
         return container
     }()
     
+    static var testContainer: NSPersistentContainer {
+        return TestCoreDataStack().testContainer
+    }
+    
     var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
@@ -41,10 +45,6 @@ class TestCoreDataStack: CoreDataStack {
             print(error.localizedDescription)
         }
     }
-    
-//    var testContainer: NSPersistentContainer {
-//        return TestCoreDataStack().testContainer
-//    }
 }
 
 
