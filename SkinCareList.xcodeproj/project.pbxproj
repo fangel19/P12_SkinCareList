@@ -26,6 +26,8 @@
 		246925DC29F8585B00BC5A49 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925DB29F8585B00BC5A49 /* WebViewController.swift */; };
 		246925DE29F9CC7400BC5A49 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925DD29F9CC7400BC5A49 /* FakeResponseData.swift */; };
 		246925E629F9CE8F00BC5A49 /* ProductTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925E529F9CE8F00BC5A49 /* ProductTestService.swift */; };
+		246925E829FA73E900BC5A49 /* ProductTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925E729FA73E900BC5A49 /* ProductTest.swift */; };
+		246925EA29FA756800BC5A49 /* ProductName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925E929FA756800BC5A49 /* ProductName.swift */; };
 		247CC52929AFADA30097D9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52829AFADA30097D9AE /* AppDelegate.swift */; };
 		247CC52B29AFADA30097D9AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52A29AFADA30097D9AE /* SceneDelegate.swift */; };
 		247CC53029AFADA30097D9AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247CC52E29AFADA30097D9AE /* Main.storyboard */; };
@@ -86,6 +88,8 @@
 		246925DD29F9CC7400BC5A49 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		246925E429F9CE3F00BC5A49 /* Product.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Product.geojson; sourceTree = "<group>"; };
 		246925E529F9CE8F00BC5A49 /* ProductTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTestService.swift; sourceTree = "<group>"; };
+		246925E729FA73E900BC5A49 /* ProductTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTest.swift; sourceTree = "<group>"; };
+		246925E929FA756800BC5A49 /* ProductName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductName.swift; sourceTree = "<group>"; };
 		247CC52529AFADA30097D9AE /* SkinCareList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinCareList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247CC52829AFADA30097D9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247CC52A29AFADA30097D9AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				24D8322329D5F3A80052DFEC /* CoreDataStack.swift */,
 				24D8322D29D627970052DFEC /* CoreDataManager.swift */,
 				24D8322529D5FA2E0052DFEC /* Products.swift */,
+				246925E929FA756800BC5A49 /* ProductName.swift */,
 				247CC53129AFADA30097D9AE /* SkinCareList.xcdatamodeld */,
 			);
 			path = SkinCareList;
@@ -237,9 +242,10 @@
 			children = (
 				2444324A29F51DAD00413437 /* CoreDataTests */,
 				2444324929F51CF000413437 /* AlamofireTests */,
-				247CC54229AFADA50097D9AE /* SkinCareListTests.swift */,
 				246925DD29F9CC7400BC5A49 /* FakeResponseData.swift */,
 				246925E429F9CE3F00BC5A49 /* Product.geojson */,
+				246925E729FA73E900BC5A49 /* ProductTest.swift */,
+				247CC54229AFADA50097D9AE /* SkinCareListTests.swift */,
 			);
 			path = SkinCareListTests;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				24113D0429BA4D50009688A0 /* ListViewController.swift in Sources */,
 				24D8322E29D627970052DFEC /* CoreDataManager.swift in Sources */,
 				24113D0829BA5201009688A0 /* CustomTableViewCell.swift in Sources */,
+				246925EA29FA756800BC5A49 /* ProductName.swift in Sources */,
 				246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */,
 				2488484429F5415500CC26A6 /* UIViewController+Alert.swift in Sources */,
 				24D8322429D5F3A80052DFEC /* CoreDataStack.swift in Sources */,
@@ -614,6 +621,7 @@
 				246925E629F9CE8F00BC5A49 /* ProductTestService.swift in Sources */,
 				2444324C29F51E5000413437 /* URLProtocol.swift in Sources */,
 				2444324E29F51FEF00413437 /* TestCoreDataStack.swift in Sources */,
+				246925E829FA73E900BC5A49 /* ProductTest.swift in Sources */,
 				2444325429F52C1B00413437 /* CoreDataTests.swift in Sources */,
 				246925DE29F9CC7400BC5A49 /* FakeResponseData.swift in Sources */,
 			);
