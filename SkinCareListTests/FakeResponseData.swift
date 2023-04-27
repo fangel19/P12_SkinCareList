@@ -30,7 +30,6 @@ class FakeResponseData {
     
     // MARK: - Error
          
-     class ConversionError: Error {}
-     
-     static let conversionError = ConversionError()
+     class NetworkError: Error {}
+     static let networkError = NetworkError()
 }

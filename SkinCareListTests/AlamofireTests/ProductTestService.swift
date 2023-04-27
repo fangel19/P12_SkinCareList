@@ -32,7 +32,7 @@ final class ProductTestService: XCTestCase {
         
         URLTest.loadingHandler = { request in
             let response = FakeResponseData.responseKO
-            let error: Error? = FakeResponseData.conversionError
+            let error: Error? = FakeResponseData.networkError
             let data: Data? = nil
             return (response, data, error)
         }
@@ -113,5 +113,23 @@ final class ProductTestService: XCTestCase {
         }
         expectation.fulfill()
         wait(for: [expectation], timeout: 3)
+    }
+    
+    func testApiErrorDescriptionErrorIsDecoding() {
+        
+        let apiError = APIError.decoding
+        XCTAssertTrue(apiError.description == "Error decoding")
+    }
+    
+    func testApiErrorDescriptionErrorIsNetwork() {
+        
+        let apiError = APIError.network
+        XCTAssertTrue(apiError.description == "Error network")
+    }
+    
+    func testApiErrorDescriptionErrorIsServer() {
+        
+        let apiError = APIError.server
+        XCTAssertTrue(apiError.description == "Error server")
     }
 }
