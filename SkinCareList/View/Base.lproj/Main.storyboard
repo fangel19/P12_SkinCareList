@@ -99,7 +99,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_HautG 1" translatesAutoresizingMaskIntoConstraints="NO" id="EYZ-dd-vWQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_BasD 1" translatesAutoresizingMaskIntoConstraints="NO" id="pEy-Ql-uyJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fond_HautD2" translatesAutoresizingMaskIntoConstraints="NO" id="pEy-Ql-uyJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                             </imageView>
                         </subviews>
@@ -141,7 +141,7 @@
         <!--LIST-->
         <scene sceneID="Myk-vU-2am">
             <objects>
-                <viewController id="MhQ-Bg-LeX" customClass="ListViewController" customModule="SkinCareList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListVC" id="MhQ-Bg-LeX" customClass="ListViewController" customModule="SkinCareList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fzo-pl-WYa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LIST" id="jBY-9k-ZYg"/>
+                    <connections>
+                        <outlet property="tableViewList" destination="7JJ-rv-2Da" id="XrG-DG-Stu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lw2-zT-Frd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +171,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fond_BasD 1" width="1384" height="1089"/>
+        <image name="Fond_HautD2" width="1384" height="1089"/>
         <image name="Fond_HautG 1" width="1384" height="1089"/>
         <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>

@@ -7,8 +7,12 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
-
+class WelcomeViewController: UIViewController, ScannerViewControllerDelegate {
+    
+    //MARK: - Properties
+    
+    var coreDataManager = CoreDataManager(managedObjectContext: CoreDataStack.sharedInstance.viewContext)
+    
     lazy var scanButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -18,16 +22,19 @@ class WelcomeViewController: UIViewController {
         return button
     }()
     
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubview()
         setupLayoutConstraints()
-        // Do any additional setup after loading the view.
     }
-    
+
     private func setupSubview() {
         self.view.addSubview(self.scanButton)
     }
+    
+    //MARK: - Method
     
     private func setupLayoutConstraints() {
         let buttonHorizontalConstraint = scanButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
@@ -37,23 +44,19 @@ class WelcomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([buttonHorizontalConstraint, buttonVerticalConstraint, buttonWidthConstraint, buttonHeightConstraint])
     }
-
+    
     @objc func scanButtonTapped() {
-        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let scanVC = storyboard.instantiateViewController(withIdentifier: "CodeVC") as! ScannerViewController
-        
+        scanVC.delegate = self
         self.present(scanVC, animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func productScanned(product: CodeResult) {
+        self.coreDataManager.addProduct(product: product)
     }
-    */
-
+    
+    func productScannedFailed(error: Error) {
+        showAlert(title: "Désolé", message: "Le produit n'a pas été trouvé, scanne un nouveau produit.")
+    }
 }

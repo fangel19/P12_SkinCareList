@@ -7,10 +7,19 @@
 import AVFoundation
 import UIKit
 
+protocol ScannerViewControllerDelegate: AnyObject {
+    func productScanned(product: CodeResult)
+    func productScannedFailed(error: Error)
+}
+
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    
+    //MARK: - Properties
+    
+    weak var delegate: ScannerViewControllerDelegate?
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    var code = String()
+    var code = String()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,16 +100,13 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
-        print("toto", code)
-        self.navigationController?.popViewController(animated: true)
-        
-        OpenFoodFactsService.shared.getCode(code: code, completion: { results in
+        OpenBeautyFactsService.shared.getCode(code: code, completion: { results in
             switch results {
-            case .success(let code):
+            case .success(let product):
+                self.delegate?.productScanned(product: product)
 
-                print(code)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.delegate?.productScannedFailed(error: error)
             }
         })
     }

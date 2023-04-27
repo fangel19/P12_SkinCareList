@@ -7,24 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2403246129D200F300556F7F /* UIImageViewURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2403246029D200F300556F7F /* UIImageViewURL.swift */; };
 		24113D0229BA3C2D009688A0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24113D0129BA3C2D009688A0 /* WelcomeViewController.swift */; };
 		24113D0429BA4D50009688A0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24113D0329BA4D50009688A0 /* ListViewController.swift */; };
 		24113D0829BA5201009688A0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24113D0629BA5201009688A0 /* CustomTableViewCell.swift */; };
 		24113D0929BA5201009688A0 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24113D0729BA5201009688A0 /* CustomTableViewCell.xib */; };
-		2466539C29C21C6700F15A2B /* OpenFoodFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539B29C21C6700F15A2B /* OpenFoodFactsService.swift */; };
+		2444324429F2AF9A00413437 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2444324329F2AF9A00413437 /* GoogleService-Info.plist */; };
+		2444324C29F51E5000413437 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444324B29F51E5000413437 /* URLProtocol.swift */; };
+		2444324E29F51FEF00413437 /* FakeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444324D29F51FEE00413437 /* FakeContext.swift */; };
+		2444325429F52C1B00413437 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2444325329F52C1B00413437 /* CoreDataService.swift */; };
+		2466539C29C21C6700F15A2B /* OpenBeautyFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539B29C21C6700F15A2B /* OpenBeautyFactsService.swift */; };
 		2466539E29C22B4200F15A2B /* CodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539D29C22B4200F15A2B /* CodeResult.swift */; };
 		246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466539F29C22CB900F15A2B /* ApiErrorSession.swift */; };
+		246925D529F7115C00BC5A49 /* 113960-cosmetics.json in Resources */ = {isa = PBXBuildFile; fileRef = 246925D429F7115C00BC5A49 /* 113960-cosmetics.json */; };
+		246925D729F7116300BC5A49 /* 107932-cosmetics.json in Resources */ = {isa = PBXBuildFile; fileRef = 246925D629F7116300BC5A49 /* 107932-cosmetics.json */; };
+		246925DC29F8585B00BC5A49 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925DB29F8585B00BC5A49 /* WebViewController.swift */; };
+		246925DE29F9CC7400BC5A49 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925DD29F9CC7400BC5A49 /* FakeResponseData.swift */; };
+		246925E629F9CE8F00BC5A49 /* ProductTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925E529F9CE8F00BC5A49 /* ProductTestService.swift */; };
+		246925E829FA73E900BC5A49 /* ProductTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925E729FA73E900BC5A49 /* ProductTest.swift */; };
+		246925EC29FADB9200BC5A49 /* Product.json in Resources */ = {isa = PBXBuildFile; fileRef = 246925EB29FADB9200BC5A49 /* Product.json */; };
+		246925EE29FAE67100BC5A49 /* CoreDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246925ED29FAE67100BC5A49 /* CoreDataServiceTests.swift */; };
 		247CC52929AFADA30097D9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52829AFADA30097D9AE /* AppDelegate.swift */; };
 		247CC52B29AFADA30097D9AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52A29AFADA30097D9AE /* SceneDelegate.swift */; };
-		247CC52D29AFADA30097D9AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC52C29AFADA30097D9AE /* ViewController.swift */; };
 		247CC53029AFADA30097D9AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247CC52E29AFADA30097D9AE /* Main.storyboard */; };
 		247CC53329AFADA30097D9AE /* SkinCareList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 247CC53129AFADA30097D9AE /* SkinCareList.xcdatamodeld */; };
 		247CC53529AFADA50097D9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247CC53429AFADA50097D9AE /* Assets.xcassets */; };
 		247CC53829AFADA50097D9AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247CC53629AFADA50097D9AE /* LaunchScreen.storyboard */; };
-		247CC54329AFADA50097D9AE /* SkinCareListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC54229AFADA50097D9AE /* SkinCareListTests.swift */; };
 		247CC54D29AFADA50097D9AE /* SkinCareListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC54C29AFADA50097D9AE /* SkinCareListUITests.swift */; };
 		247CC54F29AFADA50097D9AE /* SkinCareListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247CC54E29AFADA50097D9AE /* SkinCareListUITestsLaunchTests.swift */; };
+		2488484429F5415500CC26A6 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488484329F5415500CC26A6 /* UIViewController+Alert.swift */; };
 		24B74B0729BA788F000DE58D /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B74B0629BA788F000DE58D /* ScannerViewController.swift */; };
+		24D8322429D5F3A80052DFEC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322329D5F3A80052DFEC /* CoreDataStack.swift */; };
+		24D8322629D5FA2E0052DFEC /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322529D5FA2E0052DFEC /* Products.swift */; };
+		24D8322E29D627970052DFEC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8322D29D627970052DFEC /* CoreDataManager.swift */; };
 		7483147C916A4A5D39036C31 /* Pods_SkinCareList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1180D19F59E08B523B7C1597 /* Pods_SkinCareList.framework */; };
 		9DFA724BC0FDB9CD8CC5817D /* Pods_SkinCareListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E7D583FCD4A937668D4FF2 /* Pods_SkinCareListTests.framework */; };
 		AEA41D1D09C42341240F2466 /* Pods_SkinCareList_SkinCareListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC08963DB7CA63A365A6F150 /* Pods_SkinCareList_SkinCareListUITests.framework */; };
@@ -50,28 +65,43 @@
 /* Begin PBXFileReference section */
 		1180D19F59E08B523B7C1597 /* Pods_SkinCareList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkinCareList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E7D583FCD4A937668D4FF2 /* Pods_SkinCareListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkinCareListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2403246029D200F300556F7F /* UIImageViewURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewURL.swift; sourceTree = "<group>"; };
 		24113D0129BA3C2D009688A0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		24113D0329BA4D50009688A0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		24113D0629BA5201009688A0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		24113D0729BA5201009688A0 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		2466539B29C21C6700F15A2B /* OpenFoodFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsService.swift; sourceTree = "<group>"; };
+		2444324329F2AF9A00413437 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2444324B29F51E5000413437 /* URLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocol.swift; sourceTree = "<group>"; };
+		2444324D29F51FEE00413437 /* FakeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeContext.swift; sourceTree = "<group>"; };
+		2444325329F52C1B00413437 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		2466539B29C21C6700F15A2B /* OpenBeautyFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBeautyFactsService.swift; sourceTree = "<group>"; };
 		2466539D29C22B4200F15A2B /* CodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeResult.swift; sourceTree = "<group>"; };
 		2466539F29C22CB900F15A2B /* ApiErrorSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorSession.swift; sourceTree = "<group>"; };
+		246925D429F7115C00BC5A49 /* 113960-cosmetics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "113960-cosmetics.json"; sourceTree = "<group>"; };
+		246925D629F7116300BC5A49 /* 107932-cosmetics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "107932-cosmetics.json"; sourceTree = "<group>"; };
+		246925DB29F8585B00BC5A49 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		246925DD29F9CC7400BC5A49 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		246925E529F9CE8F00BC5A49 /* ProductTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTestService.swift; sourceTree = "<group>"; };
+		246925E729FA73E900BC5A49 /* ProductTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTest.swift; sourceTree = "<group>"; };
+		246925EB29FADB9200BC5A49 /* Product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Product.json; sourceTree = "<group>"; };
+		246925ED29FAE67100BC5A49 /* CoreDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTests.swift; sourceTree = "<group>"; };
 		247CC52529AFADA30097D9AE /* SkinCareList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinCareList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247CC52829AFADA30097D9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247CC52A29AFADA30097D9AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		247CC52C29AFADA30097D9AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		247CC52F29AFADA30097D9AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		247CC53229AFADA30097D9AE /* SkinCareList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SkinCareList.xcdatamodel; sourceTree = "<group>"; };
 		247CC53429AFADA50097D9AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		247CC53729AFADA50097D9AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		247CC53929AFADA50097D9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		247CC53E29AFADA50097D9AE /* SkinCareListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinCareListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		247CC54229AFADA50097D9AE /* SkinCareListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCareListTests.swift; sourceTree = "<group>"; };
 		247CC54829AFADA50097D9AE /* SkinCareListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinCareListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		247CC54C29AFADA50097D9AE /* SkinCareListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCareListUITests.swift; sourceTree = "<group>"; };
 		247CC54E29AFADA50097D9AE /* SkinCareListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCareListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2488484329F5415500CC26A6 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		24B74B0629BA788F000DE58D /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		24D8322329D5F3A80052DFEC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		24D8322529D5FA2E0052DFEC /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		24D8322D29D627970052DFEC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		56704859E2C0E49C8308A3BB /* Pods-SkinCareList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList.debug.xcconfig"; path = "Target Support Files/Pods-SkinCareList/Pods-SkinCareList.debug.xcconfig"; sourceTree = "<group>"; };
 		95FC1107BE01B9D19F49E0F5 /* Pods-SkinCareList-SkinCareListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList-SkinCareListUITests.debug.xcconfig"; path = "Target Support Files/Pods-SkinCareList-SkinCareListUITests/Pods-SkinCareList-SkinCareListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A98604180106DF26CB2917F /* Pods-SkinCareList-SkinCareListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinCareList-SkinCareListUITests.release.xcconfig"; path = "Target Support Files/Pods-SkinCareList-SkinCareListUITests/Pods-SkinCareList-SkinCareListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2403245F29D200BC00556F7F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2403246029D200F300556F7F /* UIImageViewURL.swift */,
+				2488484329F5415500CC26A6 /* UIViewController+Alert.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		24113D0529BA51AC009688A0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +155,44 @@
 				24113D0729BA5201009688A0 /* CustomTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2444324929F51CF000413437 /* AlamofireTests */ = {
+			isa = PBXGroup;
+			children = (
+				2444324B29F51E5000413437 /* URLProtocol.swift */,
+				246925E529F9CE8F00BC5A49 /* ProductTestService.swift */,
+			);
+			path = AlamofireTests;
+			sourceTree = "<group>";
+		};
+		2444324A29F51DAD00413437 /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				2444324D29F51FEE00413437 /* FakeContext.swift */,
+				2444325329F52C1B00413437 /* CoreDataService.swift */,
+				246925ED29FAE67100BC5A49 /* CoreDataServiceTests.swift */,
+			);
+			path = CoreDataTests;
+			sourceTree = "<group>";
+		};
+		246925D329F7114000BC5A49 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				246925D629F7116300BC5A49 /* 107932-cosmetics.json */,
+				246925D429F7115C00BC5A49 /* 113960-cosmetics.json */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		246925F129FB25DC00BC5A49 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				24D8322329D5F3A80052DFEC /* CoreDataStack.swift */,
+				24D8322D29D627970052DFEC /* CoreDataManager.swift */,
+				247CC53129AFADA30097D9AE /* SkinCareList.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		247CC51C29AFADA30097D9AE = {
@@ -143,16 +220,18 @@
 		247CC52729AFADA30097D9AE /* SkinCareList */ = {
 			isa = PBXGroup;
 			children = (
+				246925D329F7114000BC5A49 /* Ressources */,
+				2444324329F2AF9A00413437 /* GoogleService-Info.plist */,
+				2403245F29D200BC00556F7F /* Extension */,
 				24113D0529BA51AC009688A0 /* Cell */,
 				247CC55E29AFD50D0097D9AE /* View */,
 				247CC55D29AFD4B60097D9AE /* Service */,
 				247CC55C29AFD4A00097D9AE /* Controller */,
+				246925F129FB25DC00BC5A49 /* CoreData */,
 				247CC55B29AFD4960097D9AE /* Model */,
 				247CC52829AFADA30097D9AE /* AppDelegate.swift */,
 				247CC52A29AFADA30097D9AE /* SceneDelegate.swift */,
-				247CC52C29AFADA30097D9AE /* ViewController.swift */,
 				247CC53929AFADA50097D9AE /* Info.plist */,
-				247CC53129AFADA30097D9AE /* SkinCareList.xcdatamodeld */,
 			);
 			path = SkinCareList;
 			sourceTree = "<group>";
@@ -160,7 +239,11 @@
 		247CC54129AFADA50097D9AE /* SkinCareListTests */ = {
 			isa = PBXGroup;
 			children = (
-				247CC54229AFADA50097D9AE /* SkinCareListTests.swift */,
+				246925EB29FADB9200BC5A49 /* Product.json */,
+				2444324A29F51DAD00413437 /* CoreDataTests */,
+				2444324929F51CF000413437 /* AlamofireTests */,
+				246925DD29F9CC7400BC5A49 /* FakeResponseData.swift */,
+				246925E729FA73E900BC5A49 /* ProductTest.swift */,
 			);
 			path = SkinCareListTests;
 			sourceTree = "<group>";
@@ -177,6 +260,8 @@
 		247CC55B29AFD4960097D9AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24D8322529D5FA2E0052DFEC /* Products.swift */,
+				2466539D29C22B4200F15A2B /* CodeResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +272,7 @@
 				24113D0129BA3C2D009688A0 /* WelcomeViewController.swift */,
 				24113D0329BA4D50009688A0 /* ListViewController.swift */,
 				24B74B0629BA788F000DE58D /* ScannerViewController.swift */,
+				246925DB29F8585B00BC5A49 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,8 +280,7 @@
 		247CC55D29AFD4B60097D9AE /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2466539B29C21C6700F15A2B /* OpenFoodFactsService.swift */,
-				2466539D29C22B4200F15A2B /* CodeResult.swift */,
+				2466539B29C21C6700F15A2B /* OpenBeautyFactsService.swift */,
 				2466539F29C22CB900F15A2B /* ApiErrorSession.swift */,
 			);
 			path = Service;
@@ -246,12 +331,15 @@
 				247CC52229AFADA30097D9AE /* Frameworks */,
 				247CC52329AFADA30097D9AE /* Resources */,
 				F89C4CD9DBCF3D9D3DAC8597 /* [CP] Embed Pods Frameworks */,
+				247D384629F5549E00D2B018 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SkinCareList;
+			packageProductDependencies = (
+			);
 			productName = SkinCareList;
 			productReference = 247CC52529AFADA30097D9AE /* SkinCareList.app */;
 			productType = "com.apple.product-type.application";
@@ -327,6 +415,8 @@
 				Base,
 			);
 			mainGroup = 247CC51C29AFADA30097D9AE;
+			packageReferences = (
+			);
 			productRefGroup = 247CC52629AFADA30097D9AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,7 +435,10 @@
 			files = (
 				247CC53829AFADA50097D9AE /* LaunchScreen.storyboard in Resources */,
 				247CC53529AFADA50097D9AE /* Assets.xcassets in Resources */,
+				246925D529F7115C00BC5A49 /* 113960-cosmetics.json in Resources */,
+				2444324429F2AF9A00413437 /* GoogleService-Info.plist in Resources */,
 				24113D0929BA5201009688A0 /* CustomTableViewCell.xib in Resources */,
+				246925D729F7116300BC5A49 /* 107932-cosmetics.json in Resources */,
 				247CC53029AFADA30097D9AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				246925EC29FADB9200BC5A49 /* Product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +461,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		247D384629F5549E00D2B018 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		B6E7CF7A364CA3DA25593A42 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,17 +588,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247CC52D29AFADA30097D9AE /* ViewController.swift in Sources */,
+				246925DC29F8585B00BC5A49 /* WebViewController.swift in Sources */,
 				2466539E29C22B4200F15A2B /* CodeResult.swift in Sources */,
 				24113D0229BA3C2D009688A0 /* WelcomeViewController.swift in Sources */,
 				24113D0429BA4D50009688A0 /* ListViewController.swift in Sources */,
+				24D8322E29D627970052DFEC /* CoreDataManager.swift in Sources */,
 				24113D0829BA5201009688A0 /* CustomTableViewCell.swift in Sources */,
 				246653A029C22CB900F15A2B /* ApiErrorSession.swift in Sources */,
+				2488484429F5415500CC26A6 /* UIViewController+Alert.swift in Sources */,
+				24D8322429D5F3A80052DFEC /* CoreDataStack.swift in Sources */,
 				247CC53329AFADA30097D9AE /* SkinCareList.xcdatamodeld in Sources */,
 				247CC52929AFADA30097D9AE /* AppDelegate.swift in Sources */,
-				2466539C29C21C6700F15A2B /* OpenFoodFactsService.swift in Sources */,
+				2466539C29C21C6700F15A2B /* OpenBeautyFactsService.swift in Sources */,
 				247CC52B29AFADA30097D9AE /* SceneDelegate.swift in Sources */,
+				2403246129D200F300556F7F /* UIImageViewURL.swift in Sources */,
 				24B74B0729BA788F000DE58D /* ScannerViewController.swift in Sources */,
+				24D8322629D5FA2E0052DFEC /* Products.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +611,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247CC54329AFADA50097D9AE /* SkinCareListTests.swift in Sources */,
+				246925EE29FAE67100BC5A49 /* CoreDataServiceTests.swift in Sources */,
+				246925E629F9CE8F00BC5A49 /* ProductTestService.swift in Sources */,
+				2444324C29F51E5000413437 /* URLProtocol.swift in Sources */,
+				2444324E29F51FEF00413437 /* FakeContext.swift in Sources */,
+				246925E829FA73E900BC5A49 /* ProductTest.swift in Sources */,
+				2444325429F52C1B00413437 /* CoreDataService.swift in Sources */,
+				246925DE29F9CC7400BC5A49 /* FakeResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +787,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 358ZT2285C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinCareList/Info.plist;
@@ -676,6 +802,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.angelique.fourny.SkinCareList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -695,6 +829,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 358ZT2285C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinCareList/Info.plist;
@@ -709,6 +844,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.angelique.fourny.SkinCareList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
