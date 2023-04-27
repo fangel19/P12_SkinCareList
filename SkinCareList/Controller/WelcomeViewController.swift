@@ -7,11 +7,11 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, ScannerViewControllerDelegate {
     
     //MARK: - Properties
     
-    let coreDataManager = CoreDataManager(managedObjectContext: CoreDataStack.sharedInstance.viewContext)
+    var coreDataManager = CoreDataManager(managedObjectContext: CoreDataStack.sharedInstance.viewContext)
     
     lazy var scanButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -51,9 +51,7 @@ class WelcomeViewController: UIViewController {
         scanVC.delegate = self
         self.present(scanVC, animated: true)
     }
-}
-
-extension WelcomeViewController: ScannerViewControllerDelegate {
+    
     func productScanned(product: CodeResult) {
         self.coreDataManager.addProduct(product: product)
     }

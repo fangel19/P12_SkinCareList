@@ -9,8 +9,8 @@ import Foundation
 import CoreData
 @testable import SkinCareList
 
-class TestCoreDataStack: CoreDataStack {
-    static let modelName = "SkinCaleList"
+class FakeContext: CoreDataStack {
+    static let modelName = "SkinCareList"
     static let model: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
@@ -19,7 +19,7 @@ class TestCoreDataStack: CoreDataStack {
     var testContainer: NSPersistentContainer = {
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
-        let container = NSPersistentContainer(name: TestCoreDataStack.modelName, managedObjectModel: TestCoreDataStack.model)
+        let container = NSPersistentContainer(name: FakeContext.modelName, managedObjectModel: FakeContext.model)
         container.persistentStoreDescriptions = [persistentStoreDescription]
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
@@ -30,20 +30,11 @@ class TestCoreDataStack: CoreDataStack {
     }()
     
     static var testContainer: NSPersistentContainer {
-        return TestCoreDataStack().testContainer
+        return FakeContext().testContainer
     }
     
-    var mainContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
-    
-    override func saveContext() {
-        do {
-            try mainContext.save()
-        }
-        catch {
-            print(error.localizedDescription)
-        }
+    static var testContext: NSManagedObjectContext {
+        return testContainer.viewContext
     }
 }
 

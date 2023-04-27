@@ -22,7 +22,6 @@ final class ProductTest: XCTestCase {
         scannerController.found(code: product1)
         //        welcomeController.coreDataManager.addProduct(product: product3)
         XCTAssertEqual(welcomeController.scanButton.allTargets.count,  1)
-        //        XCTAssertEqual(welcomeController.accessibilityElementCount(), 1)
     }
     
 //    func testAddProduct() {
